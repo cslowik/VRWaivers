@@ -13,6 +13,10 @@
 		839C487D1D36BFD900D2B8C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839C487C1D36BFD900D2B8C0 /* Assets.xcassets */; };
 		839C48801D36BFD900D2B8C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839C487E1D36BFD900D2B8C0 /* LaunchScreen.storyboard */; };
 		839C488B1D36BFD900D2B8C0 /* VRWaiversTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C488A1D36BFD900D2B8C0 /* VRWaiversTests.swift */; };
+		83FD0E241D36C137005EB824 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FD0E221D36C137005EB824 /* Realm.framework */; };
+		83FD0E251D36C137005EB824 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83FD0E221D36C137005EB824 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		83FD0E261D36C137005EB824 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FD0E231D36C137005EB824 /* RealmSwift.framework */; };
+		83FD0E271D36C137005EB824 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83FD0E231D36C137005EB824 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +29,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		83FD0E281D36C138005EB824 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				83FD0E271D36C137005EB824 /* RealmSwift.framework in Embed Frameworks */,
+				83FD0E251D36C137005EB824 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		839C48721D36BFD800D2B8C0 /* VRWaivers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VRWaivers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		839C48751D36BFD900D2B8C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +55,8 @@
 		839C48861D36BFD900D2B8C0 /* VRWaiversTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VRWaiversTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		839C488A1D36BFD900D2B8C0 /* VRWaiversTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VRWaiversTests.swift; sourceTree = "<group>"; };
 		839C488C1D36BFD900D2B8C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83FD0E221D36C137005EB824 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		83FD0E231D36C137005EB824 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83FD0E261D36C137005EB824 /* RealmSwift.framework in Frameworks */,
+				83FD0E241D36C137005EB824 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +82,8 @@
 		839C48691D36BFD800D2B8C0 = {
 			isa = PBXGroup;
 			children = (
+				83FD0E221D36C137005EB824 /* Realm.framework */,
+				83FD0E231D36C137005EB824 /* RealmSwift.framework */,
 				839C48741D36BFD900D2B8C0 /* VRWaivers */,
 				839C48891D36BFD900D2B8C0 /* VRWaiversTests */,
 				839C48731D36BFD800D2B8C0 /* Products */,
@@ -106,6 +131,8 @@
 				839C486E1D36BFD800D2B8C0 /* Sources */,
 				839C486F1D36BFD800D2B8C0 /* Frameworks */,
 				839C48701D36BFD800D2B8C0 /* Resources */,
+				83FD0E281D36C138005EB824 /* Embed Frameworks */,
+				83FD0E291D36C175005EB824 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -146,6 +173,7 @@
 				TargetAttributes = {
 					839C48711D36BFD800D2B8C0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5AEGZ7W8KM;
 					};
 					839C48851D36BFD900D2B8C0 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -191,6 +219,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83FD0E291D36C175005EB824 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		839C486E1D36BFD800D2B8C0 /* Sources */ = {
@@ -329,6 +373,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VRWaivers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rocks.vrlab.VRWaivers;
@@ -340,6 +390,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VRWaivers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rocks.vrlab.VRWaivers;
@@ -390,6 +446,7 @@
 				839C48911D36BFD900D2B8C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		839C48921D36BFD900D2B8C0 /* Build configuration list for PBXNativeTarget "VRWaiversTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +455,7 @@
 				839C48941D36BFD900D2B8C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
