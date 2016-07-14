@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ax4-I4-csV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ax4-I4-csV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -63,14 +63,14 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lej-wI-TGj">
                                 <rect key="frame" x="20" y="287" width="984" height="366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">VRLab experiences are not designed for children under 13. If you are under 18, parent or guardian permission and supervision is required.
+                                <mutableString key="text">VRLab experiences are not designed for children under 13. If you are under 18, parent or guardian permission and supervision is required.
 
-Some people may experience symptoms when experiencing virtual reality, including motion sickness, nausea, disorientation, visual abnormalities, or other discomfort. Some cutting edge content may be in a beta or in-progress state, which may heighten or increase the likelihood of experiencing symptoms.
+Some people may experience symptoms when experiencing virtual reality, including motion sickness, nausea, disorientation, visual abnormalities, or other discomfort. VR experiences may include flashing lights or environments. Anyone who has had a seizure, loss of awareness, or other symptoms linked to an epileptic condition should consult a physician before participating in VR experiences.  Some cutting edge content may be in a beta or in-progress state, which may heighten or increase the likelihood of experiencing symptoms.
 
-If you are susceptible to motion sickness, please advise the attendant before participating. If you experience any of these symptoms, stop immediately, advise the attendant and do not engage in activities that require unimpaired balance and hand-eye coordination until you have fully recovered.
+If you are susceptible to motion sickness or seizures, please advise the attendant before participating. If you experience any of these symptoms, stop immediately, advise the attendant and do not engage in activities that require unimpaired balance and hand-eye coordination until you have fully recovered.
 
-Immersive VR experiences necessarily block out the world around the user. VRLab operates an open playspace that may present unknown hazards if the participant steps outside the boundaries.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+Immersive VR experiences necessarily block out the world around the user. VRLab operates an open playspace that may present unknown hazards if the participant steps outside the boundaries.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdJ-lX-Nou">
@@ -221,11 +221,8 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8U-7G-Lef">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8U-7G-Lef">
                                 <rect key="frame" x="20" y="688" width="984" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="a00-Jg-NnJ"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save Signature">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
