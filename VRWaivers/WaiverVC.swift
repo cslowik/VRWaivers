@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WaiverVC.swift
 //  VRWaivers
 //
 //  Created by Chris Slowik on 7/13/16.
@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController {
+class WaiverVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

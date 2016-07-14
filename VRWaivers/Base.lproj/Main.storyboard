@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WaiverVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WaiverVC" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -29,45 +28,91 @@
                                         <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="331" width="760" height="249"/>
+                                </variation>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="va7-Bh-jRk">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="176" y="285" width="212" height="30"/>
+                                    <rect key="frame" x="115" y="285" width="212" height="30"/>
                                 </variation>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywr-qV-cKn">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <string key="text">BY PARTICIPATING IN ANY VRLAB EXPERIENCE, YOU ARE INDICATING YOUR ACCEPTANCE 
+OF THE TERMS AND CONDITIONS OF THIS AGREEMENT.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="20" width="760" height="44"/>
+                                </variation>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lej-wI-TGj">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">VRLab experiences are not meant for children under 13. If you are under 18, parent or guardian permission is required.
+
+Some people may experience symptoms when experiencing virtual reality, including motion sickness, nausea, disorientation, visual abnormalities, or other discomfort. Some cutting edge content may be in a beta or in-progress state, which may heighten or increase the likelihood of experiencing symptoms.
+
+If you are susceptible to motion sickness, please advise the attendant before participating. If you experience any of these symptoms, stop immediately, advise the attendant and do not engage in activities that require unimpaired balance and hand-eye coordination until you have fully recovered.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="72" width="760" height="180"/>
+                                </variation>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hv-nk-xd5">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="289" width="83" height="21"/>
+                                </variation>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ppA-w7-wuD">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="468" y="286" width="212" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzz-gA-krh">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="374" y="290" width="82" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="1C2-RD-CTw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Z1W-uV-jcG"/>
-                            <constraint firstAttribute="bottom" secondItem="1C2-RD-CTw" secondAttribute="bottom" constant="20" symbolic="YES" id="djh-7u-CXm"/>
-                            <constraint firstItem="1C2-RD-CTw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gr0-e0-IlP"/>
-                            <constraint firstItem="1C2-RD-CTw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="311" id="qp9-qR-qj4"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="1C2-RD-CTw"/>
                                 <exclude reference="va7-Bh-jRk"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="Z1W-uV-jcG"/>
-                                <exclude reference="djh-7u-CXm"/>
-                                <exclude reference="gr0-e0-IlP"/>
-                                <exclude reference="qp9-qR-qj4"/>
+                                <exclude reference="Ywr-qV-cKn"/>
+                                <exclude reference="lej-wI-TGj"/>
+                                <exclude reference="4hv-nk-xd5"/>
+                                <exclude reference="ppA-w7-wuD"/>
+                                <exclude reference="Pzz-gA-krh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
                             <mask key="subviews">
                                 <include reference="1C2-RD-CTw"/>
                                 <include reference="va7-Bh-jRk"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="Z1W-uV-jcG"/>
-                                <include reference="djh-7u-CXm"/>
-                                <include reference="gr0-e0-IlP"/>
-                                <include reference="qp9-qR-qj4"/>
+                                <include reference="Ywr-qV-cKn"/>
+                                <include reference="lej-wI-TGj"/>
+                                <include reference="4hv-nk-xd5"/>
+                                <include reference="ppA-w7-wuD"/>
+                                <include reference="Pzz-gA-krh"/>
                             </mask>
                         </variation>
                     </view>
