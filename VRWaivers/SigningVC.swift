@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import SwiftyJSON
 
 class SigningVC: UIViewController {
 
@@ -29,6 +30,12 @@ class SigningVC: UIViewController {
     }
 
     func submitCustomer() {
-        print("submit")
+        let jsonObject: [String: AnyObject] = [
+                                            "given_name": firstNameTextField.text!,
+                                            "family_name": lastNameTextField.text!,
+                                            "phone_number": phoneNumberTextField.text!,
+                                            "email_address": emailTextField.text!
+                                            ]
+        print(jsonObject)
     }
 }
