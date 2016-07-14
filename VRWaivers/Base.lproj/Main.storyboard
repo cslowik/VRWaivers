@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="sfV-0K-kRY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -21,7 +21,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywr-qV-cKn">
                                 <rect key="frame" x="20" y="218" width="984" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="mJW-UN-9Hk"/>
+                                    <constraint firstAttribute="height" constant="60" id="sHC-Kn-86t"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="BY PARTICIPATING IN ANY VRLAB EXPERIENCE, YOU ARE INDICATING YOUR ACCEPTANCE">
@@ -53,13 +53,13 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lej-wI-TGj">
                                 <rect key="frame" x="20" y="287" width="984" height="366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">VRLab experiences are not designed for children under 13. If you are under 18, parent or guardian permission and supervision is required.
+                                <string key="text">VRLab experiences are not designed for children under 13. If you are under 18, parent or guardian permission and supervision is required.
 
 Some people may experience symptoms when experiencing virtual reality, including motion sickness, nausea, disorientation, visual abnormalities, or other discomfort. Some cutting edge content may be in a beta or in-progress state, which may heighten or increase the likelihood of experiencing symptoms.
 
 If you are susceptible to motion sickness, please advise the attendant before participating. If you experience any of these symptoms, stop immediately, advise the attendant and do not engage in activities that require unimpaired balance and hand-eye coordination until you have fully recovered.
 
-Immersive VR experiences necessarily block out the world around the user. VRLab operates an open playspace that may present unknown hazards if the participant steps outside the boundaries.</mutableString>
+Immersive VR experiences necessarily block out the world around the user. VRLab operates an open playspace that may present unknown hazards if the participant steps outside the boundaries.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -73,40 +73,41 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="25H-YX-TYh" kind="modal" modalTransitionStyle="flipHorizontal" id="QMq-PG-jBQ"/>
+                                    <segue destination="25H-YX-TYh" kind="push" id="QMq-PG-jBQ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VRLAB-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Imp-HU-paf">
-                                <rect key="frame" x="298" y="21" width="429" height="167"/>
+                                <rect key="frame" x="298" y="61" width="429" height="167"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="429" id="dVI-UE-Qgd"/>
+                                    <constraint firstAttribute="width" constant="429" id="SmZ-Op-RRw"/>
+                                    <constraint firstAttribute="height" constant="167" id="hYh-3D-95t"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Imp-HU-paf" firstAttribute="centerX" secondItem="Ywr-qV-cKn" secondAttribute="centerX" id="693-Vx-QYn"/>
-                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="leading" secondItem="lej-wI-TGj" secondAttribute="leading" id="7Rr-wN-fck"/>
-                            <constraint firstItem="lej-wI-TGj" firstAttribute="trailing" secondItem="PdJ-lX-Nou" secondAttribute="trailing" id="BUa-gb-nsR"/>
+                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="top" secondItem="Imp-HU-paf" secondAttribute="bottom" constant="-10" id="3S7-XY-UBR"/>
+                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="leading" secondItem="lej-wI-TGj" secondAttribute="leading" id="3Vj-JY-JNr"/>
+                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="J1J-is-3Ae"/>
                             <constraint firstAttribute="bottom" secondItem="PdJ-lX-Nou" secondAttribute="bottom" constant="20" symbolic="YES" id="Jqy-q9-hBq"/>
-                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VyV-27-fFg"/>
-                            <constraint firstItem="lej-wI-TGj" firstAttribute="top" secondItem="Imp-HU-paf" secondAttribute="bottom" constant="99" id="c6P-Ry-RYH"/>
-                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cOV-kr-VVI"/>
-                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="198" id="ceY-6d-11n"/>
-                            <constraint firstItem="lej-wI-TGj" firstAttribute="top" secondItem="Ywr-qV-cKn" secondAttribute="bottom" constant="9" id="h43-IO-yB3"/>
-                            <constraint firstItem="Imp-HU-paf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="21" id="jux-aJ-rro"/>
-                            <constraint firstItem="PdJ-lX-Nou" firstAttribute="top" secondItem="lej-wI-TGj" secondAttribute="bottom" constant="35" id="oP8-Fg-Kwm"/>
-                            <constraint firstItem="lej-wI-TGj" firstAttribute="leading" secondItem="PdJ-lX-Nou" secondAttribute="leading" id="qs4-9l-TGF"/>
-                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="trailing" secondItem="lej-wI-TGj" secondAttribute="trailing" id="s7u-8c-863"/>
+                            <constraint firstItem="Imp-HU-paf" firstAttribute="centerX" secondItem="Ywr-qV-cKn" secondAttribute="centerX" id="KUg-bm-kIW"/>
+                            <constraint firstItem="lej-wI-TGj" firstAttribute="top" secondItem="Ywr-qV-cKn" secondAttribute="bottom" constant="9" id="SIS-6F-2s8"/>
+                            <constraint firstItem="PdJ-lX-Nou" firstAttribute="top" secondItem="lej-wI-TGj" secondAttribute="bottom" constant="35" id="SQU-Kc-h8f"/>
+                            <constraint firstItem="Imp-HU-paf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="61" id="U7x-AI-aTG"/>
+                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Uqk-Ec-DhS"/>
+                            <constraint firstItem="lej-wI-TGj" firstAttribute="trailing" secondItem="PdJ-lX-Nou" secondAttribute="trailing" id="XGt-Mp-uol"/>
+                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="trailing" secondItem="lej-wI-TGj" secondAttribute="trailing" id="ecw-zJ-oQA"/>
+                            <constraint firstItem="lej-wI-TGj" firstAttribute="leading" secondItem="PdJ-lX-Nou" secondAttribute="leading" id="wBp-GT-iAP"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CRZ-CI-p1P"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="581.75999999999999" y="1032.96"/>
+            <point key="canvasLocation" x="1561" y="1032"/>
         </scene>
-        <!--SigningVC-->
+        <!--Player Info-->
         <scene sceneID="iBR-BA-cQe">
             <objects>
                 <viewController id="25H-YX-TYh" customClass="SigningVC" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,112 +119,124 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="mvk-zK-LHk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="mvk-zK-LHk">
                                 <rect key="frame" x="129" y="328" width="300" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="o4S-vQ-Oh3"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="IP5-Uf-4Kw">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="IP5-Uf-4Kw">
                                 <rect key="frame" x="129" y="400" width="300" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fp1-EP-FA4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fp1-EP-FA4">
                                 <rect key="frame" x="20" y="410" width="101" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="n8h-z9-niW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="n8h-z9-niW">
                                 <rect key="frame" x="615" y="328" width="389" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="3Zj-bc-yNg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="3Zj-bc-yNg">
                                 <rect key="frame" x="615" y="400" width="389" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdy-vv-kri">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email Address" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdy-vv-kri">
                                 <rect key="frame" x="449" y="410" width="158" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="158" id="qAg-xw-ekx"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egy-oc-SI6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egy-oc-SI6">
                                 <rect key="frame" x="20" y="338" width="101" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="1wm-kM-rgw"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uac-eE-VD3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone Number" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uac-eE-VD3">
                                 <rect key="frame" x="442" y="338" width="165" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-Q2-gTp">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yby-Q2-gTp">
                                 <rect key="frame" x="20" y="688" width="984" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="fcs-xd-EgD"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Complete Waiver">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="hGd-sN-9C5" kind="push" id="eXR-g6-37Z"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="mvk-zK-LHk" firstAttribute="leading" secondItem="IP5-Uf-4Kw" secondAttribute="leading" id="2bK-fX-75a"/>
-                            <constraint firstItem="3Zj-bc-yNg" firstAttribute="trailing" secondItem="yby-Q2-gTp" secondAttribute="trailing" id="3YU-Se-4s5"/>
-                            <constraint firstItem="3Zj-bc-yNg" firstAttribute="leading" secondItem="rdy-vv-kri" secondAttribute="trailing" constant="8" symbolic="YES" id="4bx-a8-Hpp"/>
-                            <constraint firstItem="mvk-zK-LHk" firstAttribute="trailing" secondItem="IP5-Uf-4Kw" secondAttribute="trailing" id="4yZ-ht-9lT"/>
-                            <constraint firstItem="Fp1-EP-FA4" firstAttribute="centerY" secondItem="IP5-Uf-4Kw" secondAttribute="centerY" id="7KB-tH-3Nc"/>
-                            <constraint firstItem="egy-oc-SI6" firstAttribute="leading" secondItem="vsk-LT-YEN" secondAttribute="leadingMargin" id="BSx-Mg-g2m"/>
-                            <constraint firstItem="Fp1-EP-FA4" firstAttribute="leading" secondItem="yby-Q2-gTp" secondAttribute="leading" id="BjP-CT-FeK"/>
-                            <constraint firstItem="IP5-Uf-4Kw" firstAttribute="baseline" secondItem="3Zj-bc-yNg" secondAttribute="baseline" id="F0x-5I-Z6f"/>
-                            <constraint firstItem="n8h-z9-niW" firstAttribute="leading" secondItem="uac-eE-VD3" secondAttribute="trailing" constant="8" symbolic="YES" id="JWX-tJ-4ZS"/>
-                            <constraint firstItem="uac-eE-VD3" firstAttribute="leading" secondItem="mvk-zK-LHk" secondAttribute="trailing" constant="13" id="KVw-m9-8aG"/>
-                            <constraint firstItem="n8h-z9-niW" firstAttribute="leading" secondItem="3Zj-bc-yNg" secondAttribute="leading" id="MVj-FC-csg"/>
-                            <constraint firstItem="egy-oc-SI6" firstAttribute="centerY" secondItem="mvk-zK-LHk" secondAttribute="centerY" id="PMr-Wd-ORS"/>
-                            <constraint firstItem="rdy-vv-kri" firstAttribute="leading" secondItem="IP5-Uf-4Kw" secondAttribute="trailing" constant="20" id="XV4-cd-udW"/>
-                            <constraint firstItem="Fp1-EP-FA4" firstAttribute="baseline" secondItem="rdy-vv-kri" secondAttribute="baseline" id="Z1z-qs-Hhf"/>
-                            <constraint firstItem="mvk-zK-LHk" firstAttribute="top" secondItem="BUG-Cj-t0R" secondAttribute="bottom" constant="308" id="bdl-5T-GVr"/>
-                            <constraint firstItem="mvk-zK-LHk" firstAttribute="bottom" secondItem="n8h-z9-niW" secondAttribute="bottom" id="cg4-xo-gKs"/>
-                            <constraint firstItem="mvk-zK-LHk" firstAttribute="baseline" secondItem="n8h-z9-niW" secondAttribute="baseline" id="d8h-V6-PNp"/>
-                            <constraint firstItem="n8h-z9-niW" firstAttribute="trailing" secondItem="vsk-LT-YEN" secondAttribute="trailingMargin" id="h5k-qj-T4T"/>
-                            <constraint firstItem="IP5-Uf-4Kw" firstAttribute="top" secondItem="mvk-zK-LHk" secondAttribute="bottom" constant="30" id="j9f-EV-Nfo"/>
-                            <constraint firstItem="IP5-Uf-4Kw" firstAttribute="leading" secondItem="Fp1-EP-FA4" secondAttribute="trailing" constant="8" symbolic="YES" id="jDs-TP-z1b"/>
-                            <constraint firstItem="n8h-z9-niW" firstAttribute="trailing" secondItem="3Zj-bc-yNg" secondAttribute="trailing" id="kHU-BX-2GY"/>
-                            <constraint firstItem="egy-oc-SI6" firstAttribute="leading" secondItem="Fp1-EP-FA4" secondAttribute="leading" id="q8Y-Uu-tBA"/>
-                            <constraint firstItem="egy-oc-SI6" firstAttribute="top" secondItem="BUG-Cj-t0R" secondAttribute="bottom" constant="318" id="sXI-fl-EnU"/>
-                            <constraint firstItem="IP5-Uf-4Kw" firstAttribute="bottom" secondItem="3Zj-bc-yNg" secondAttribute="bottom" id="uVf-MG-fay"/>
-                            <constraint firstAttribute="bottom" secondItem="yby-Q2-gTp" secondAttribute="bottom" constant="20" symbolic="YES" id="udd-fp-MGa"/>
-                            <constraint firstItem="egy-oc-SI6" firstAttribute="baseline" secondItem="uac-eE-VD3" secondAttribute="baseline" id="vvA-Vr-eme"/>
-                            <constraint firstItem="mvk-zK-LHk" firstAttribute="leading" secondItem="egy-oc-SI6" secondAttribute="trailing" constant="8" symbolic="YES" id="yLi-ko-2b9"/>
-                            <constraint firstItem="Fp1-EP-FA4" firstAttribute="top" secondItem="egy-oc-SI6" secondAttribute="bottom" constant="51" id="zqc-t2-wtP"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Cvf-va-PWQ"/>
+                    <navigationItem key="navigationItem" title="Player Info" id="Cvf-va-PWQ"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4L-HU-tti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735" y="1032"/>
+            <point key="canvasLocation" x="2715" y="1032"/>
+        </scene>
+        <!--Sign and Play!-->
+        <scene sceneID="qPH-yc-UxG">
+            <objects>
+                <viewController id="hGd-sN-9C5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XzM-8g-0rg"/>
+                        <viewControllerLayoutGuide type="bottom" id="mOf-zr-KVh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HbM-Og-k4q">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8U-7G-Lef">
+                                <rect key="frame" x="20" y="688" width="984" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="a00-Jg-NnJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save Signature">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign and Play!" id="J14-1r-1GO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JnZ-vd-bcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3804" y="1032"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aK8-gC-gDf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sfV-0K-kRY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zFd-4I-AgK">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="n7m-dq-rGW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbZ-mc-lKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447" y="1032"/>
         </scene>
     </scenes>
     <resources>
