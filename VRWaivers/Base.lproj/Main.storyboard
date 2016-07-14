@@ -246,7 +246,6 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                     <navigationItem key="navigationItem" title="Sign and Play!" id="J14-1r-1GO"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="signature" destination="cX3-Is-8OX" id="xe3-Xq-iup"/>
                         <outlet property="signatureView" destination="cX3-Is-8OX" id="e0z-Ye-peo"/>
                     </connections>
                 </viewController>

@@ -18,8 +18,6 @@ class WaiverPageVC: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        dataSource = self
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
@@ -34,20 +32,4 @@ class WaiverPageVC: UIPageViewController {
         // Dispose of any resources that can be recreated.
     }
 
-}
-
-// MARK: UIPageViewControllerDataSource
-
-extension WaiverPageVC: UIPageViewControllerDataSource {
-    
-    func pageViewController(pageViewController: UIPageViewController,
-                            viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        return nil
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController,
-                            viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        return nil
-    }
-    
 }
