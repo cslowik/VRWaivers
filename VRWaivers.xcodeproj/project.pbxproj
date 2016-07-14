@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8364E2281D37414500D8F755 /* SigningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8364E2271D37414500D8F755 /* SigningVC.swift */; };
 		839C48761D36BFD900D2B8C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C48751D36BFD900D2B8C0 /* AppDelegate.swift */; };
 		839C48781D36BFD900D2B8C0 /* WaiverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C48771D36BFD900D2B8C0 /* WaiverVC.swift */; };
 		839C487B1D36BFD900D2B8C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839C48791D36BFD900D2B8C0 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8364E2271D37414500D8F755 /* SigningVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigningVC.swift; sourceTree = "<group>"; };
 		839C48721D36BFD800D2B8C0 /* VRWaivers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VRWaivers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		839C48751D36BFD900D2B8C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		839C48771D36BFD900D2B8C0 /* WaiverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiverVC.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				839C48751D36BFD900D2B8C0 /* AppDelegate.swift */,
 				839C48771D36BFD900D2B8C0 /* WaiverVC.swift */,
+				8364E2271D37414500D8F755 /* SigningVC.swift */,
 				839C48791D36BFD900D2B8C0 /* Main.storyboard */,
 				839C487C1D36BFD900D2B8C0 /* Assets.xcassets */,
 				839C487E1D36BFD900D2B8C0 /* LaunchScreen.storyboard */,
@@ -246,6 +249,7 @@
 			files = (
 				83FD0E2B1D36C57D005EB824 /* SignatureView.swift in Sources */,
 				839C48781D36BFD900D2B8C0 /* WaiverVC.swift in Sources */,
+				8364E2281D37414500D8F755 /* SigningVC.swift in Sources */,
 				839C48761D36BFD900D2B8C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

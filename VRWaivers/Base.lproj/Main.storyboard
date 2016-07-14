@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -15,18 +15,18 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywr-qV-cKn">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <rect key="frame" x="20" y="218" width="984" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="mJW-UN-9Hk"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="BY PARTICIPATING IN ANY VRLAB EXPERIENCE, YOU ARE INDICATING YOUR ACCEPTANCE">
                                         <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
                                             <font key="NSOriginalFont" size="18" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -34,14 +34,14 @@
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="OF THE TERMS AND CONDITIONS OF THIS AGREEMENT.">
                                         <attributes>
-                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
                                             <font key="NSOriginalFont" size="18" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -49,19 +49,9 @@
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="mJW-UN-9Hk"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="mJW-UN-9Hk"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lej-wI-TGj">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="20" y="287" width="984" height="366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <mutableString key="text">VRLab experiences are not designed for children under 13. If you are under 18, parent or guardian permission and supervision is required.
 
@@ -74,42 +64,23 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdJ-lX-Nou">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="20" y="688" width="984" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="rTD-f1-cTQ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="I Agree">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="rTD-f1-cTQ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <mask key="constraints">
-                                        <include reference="rTD-f1-cTQ"/>
-                                    </mask>
-                                </variation>
+                                <connections>
+                                    <segue destination="25H-YX-TYh" kind="modal" modalTransitionStyle="partialCurl" id="QMq-PG-jBQ"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VRLAB-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Imp-HU-paf">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <rect key="frame" x="298" y="21" width="429" height="167"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="dVI-UE-Qgd">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="429"/>
-                                    </constraint>
+                                    <constraint firstAttribute="width" constant="429" id="dVI-UE-Qgd"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="dVI-UE-Qgd"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="dVI-UE-Qgd"/>
-                                    </mask>
-                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -119,74 +90,41 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                             <constraint firstItem="lej-wI-TGj" firstAttribute="trailing" secondItem="PdJ-lX-Nou" secondAttribute="trailing" id="BUa-gb-nsR"/>
                             <constraint firstAttribute="bottom" secondItem="PdJ-lX-Nou" secondAttribute="bottom" constant="20" symbolic="YES" id="Jqy-q9-hBq"/>
                             <constraint firstItem="Ywr-qV-cKn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="VyV-27-fFg"/>
-                            <constraint firstItem="lej-wI-TGj" firstAttribute="top" secondItem="Imp-HU-paf" secondAttribute="bottom" constant="65" id="c6P-Ry-RYH">
-                                <variation key="heightClass=regular-widthClass=regular" constant="109"/>
-                            </constraint>
+                            <constraint firstItem="lej-wI-TGj" firstAttribute="top" secondItem="Imp-HU-paf" secondAttribute="bottom" constant="99" id="c6P-Ry-RYH"/>
                             <constraint firstItem="Ywr-qV-cKn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cOV-kr-VVI"/>
-                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="98" id="ceY-6d-11n">
-                                <variation key="heightClass=regular-widthClass=regular" constant="198"/>
-                            </constraint>
+                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="198" id="ceY-6d-11n"/>
                             <constraint firstItem="lej-wI-TGj" firstAttribute="top" secondItem="Ywr-qV-cKn" secondAttribute="bottom" constant="9" id="h43-IO-yB3"/>
-                            <constraint firstItem="Imp-HU-paf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="10" id="jux-aJ-rro">
-                                <variation key="heightClass=regular-widthClass=regular" constant="11"/>
-                            </constraint>
-                            <constraint firstItem="PdJ-lX-Nou" firstAttribute="top" secondItem="lej-wI-TGj" secondAttribute="bottom" constant="54" id="oP8-Fg-Kwm">
-                                <variation key="heightClass=regular-widthClass=regular" constant="35"/>
-                            </constraint>
+                            <constraint firstItem="Imp-HU-paf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="21" id="jux-aJ-rro"/>
+                            <constraint firstItem="PdJ-lX-Nou" firstAttribute="top" secondItem="lej-wI-TGj" secondAttribute="bottom" constant="35" id="oP8-Fg-Kwm"/>
                             <constraint firstItem="lej-wI-TGj" firstAttribute="leading" secondItem="PdJ-lX-Nou" secondAttribute="leading" id="qs4-9l-TGF"/>
                             <constraint firstItem="Ywr-qV-cKn" firstAttribute="trailing" secondItem="lej-wI-TGj" secondAttribute="trailing" id="s7u-8c-863"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Ywr-qV-cKn"/>
-                                <exclude reference="lej-wI-TGj"/>
-                                <exclude reference="PdJ-lX-Nou"/>
-                                <exclude reference="Imp-HU-paf"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="7Rr-wN-fck"/>
-                                <exclude reference="VyV-27-fFg"/>
-                                <exclude reference="cOV-kr-VVI"/>
-                                <exclude reference="ceY-6d-11n"/>
-                                <exclude reference="s7u-8c-863"/>
-                                <exclude reference="BUa-gb-nsR"/>
-                                <exclude reference="c6P-Ry-RYH"/>
-                                <exclude reference="h43-IO-yB3"/>
-                                <exclude reference="qs4-9l-TGF"/>
-                                <exclude reference="693-Vx-QYn"/>
-                                <exclude reference="jux-aJ-rro"/>
-                                <exclude reference="Jqy-q9-hBq"/>
-                                <exclude reference="oP8-Fg-Kwm"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=regular">
-                            <mask key="subviews">
-                                <include reference="Ywr-qV-cKn"/>
-                                <include reference="lej-wI-TGj"/>
-                                <include reference="PdJ-lX-Nou"/>
-                                <include reference="Imp-HU-paf"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="7Rr-wN-fck"/>
-                                <include reference="VyV-27-fFg"/>
-                                <include reference="cOV-kr-VVI"/>
-                                <include reference="ceY-6d-11n"/>
-                                <include reference="s7u-8c-863"/>
-                                <include reference="BUa-gb-nsR"/>
-                                <include reference="c6P-Ry-RYH"/>
-                                <include reference="h43-IO-yB3"/>
-                                <include reference="qs4-9l-TGF"/>
-                                <include reference="693-Vx-QYn"/>
-                                <include reference="jux-aJ-rro"/>
-                                <include reference="Jqy-q9-hBq"/>
-                                <include reference="oP8-Fg-Kwm"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="637.5"/>
+            <point key="canvasLocation" x="581.75999999999999" y="1032.96"/>
+        </scene>
+        <!--SigningVC-->
+        <scene sceneID="iBR-BA-cQe">
+            <objects>
+                <viewController id="25H-YX-TYh" customClass="SigningVC" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BUG-Cj-t0R"/>
+                        <viewControllerLayoutGuide type="bottom" id="MKU-CL-h00"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vsk-LT-YEN">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cvf-va-PWQ"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y4L-HU-tti" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="1032"/>
         </scene>
     </scenes>
     <resources>
