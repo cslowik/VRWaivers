@@ -10,6 +10,8 @@ import UIKit
 
 class SignatureVC: UIViewController {
 
+    @IBOutlet weak var signatureView: SignatureView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
