@@ -182,6 +182,16 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                     </view>
                     <navigationItem key="navigationItem" title="Player Info" id="Cvf-va-PWQ"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="rdy-vv-kri" id="lSW-Ro-Wif"/>
+                        <outlet property="emailTextField" destination="3Zj-bc-yNg" id="N4X-d7-MlV"/>
+                        <outlet property="firstNameLabel" destination="egy-oc-SI6" id="qVv-pc-N7r"/>
+                        <outlet property="firstNameTextField" destination="mvk-zK-LHk" id="Eri-ay-gup"/>
+                        <outlet property="lastNameLabel" destination="Fp1-EP-FA4" id="u68-eV-Xvf"/>
+                        <outlet property="lastNameTextField" destination="IP5-Uf-4Kw" id="N6t-pu-jyt"/>
+                        <outlet property="phoneNumberLabel" destination="uac-eE-VD3" id="8ep-Io-JxS"/>
+                        <outlet property="phoneNumberTextField" destination="n8h-z9-niW" id="eGj-fH-HYD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4L-HU-tti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

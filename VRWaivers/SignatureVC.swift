@@ -1,5 +1,5 @@
 //
-//  SigningVC.swift
+//  SignatureVC.swift
 //  VRWaivers
 //
 //  Created by Chris Slowik on 7/13/16.
@@ -7,22 +7,13 @@
 //
 
 import UIKit
-import SnapKit
 
-class SigningVC: UIViewController {
+class SignatureVC: UIViewController {
 
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
