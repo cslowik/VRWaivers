@@ -109,6 +109,9 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                     </view>
                     <navigationItem key="navigationItem" id="CRZ-CI-p1P"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="agreeButton" destination="PdJ-lX-Nou" id="1SB-dm-lqY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,6 +194,7 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                     <navigationItem key="navigationItem" title="Player Info" id="Cvf-va-PWQ"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="completeButton" destination="yby-Q2-gTp" id="NqC-72-DqK"/>
                         <outlet property="emailLabel" destination="rdy-vv-kri" id="lSW-Ro-Wif"/>
                         <outlet property="emailTextField" destination="3Zj-bc-yNg" id="N4X-d7-MlV"/>
                         <outlet property="firstNameLabel" destination="egy-oc-SI6" id="qVv-pc-N7r"/>
@@ -246,6 +250,7 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                     <navigationItem key="navigationItem" title="Sign and Play!" id="J14-1r-1GO"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="saveButton" destination="g8U-7G-Lef" id="zJ4-cq-JIB"/>
                         <outlet property="signatureView" destination="cX3-Is-8OX" id="e0z-Ye-peo"/>
                     </connections>
                 </viewController>

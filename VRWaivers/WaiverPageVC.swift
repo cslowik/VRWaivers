@@ -32,4 +32,23 @@ class WaiverPageVC: UIPageViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func agreeTapped() {
+        let nextViewController = orderedViewControllers[1]
+        setViewControllers([nextViewController],
+                           direction: .Forward,
+                           animated: true,
+                           completion: nil)
+    }
+    
+    func completeTapped() {
+        let nextViewController = orderedViewControllers[2]
+        setViewControllers([nextViewController],
+                           direction: .Forward,
+                           animated: true,
+                           completion: nil)
+    }
+    
+    func saveTapped() {
+    
+    }
 }

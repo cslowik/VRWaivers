@@ -11,11 +11,12 @@ import UIKit
 class SignatureVC: UIViewController {
 
     @IBOutlet weak var signatureView: SignatureView!
+    @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        saveButton.addTarget(nil, action: "saveTapped", forControlEvents: .TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {

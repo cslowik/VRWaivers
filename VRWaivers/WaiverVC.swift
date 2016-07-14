@@ -10,16 +10,17 @@ import UIKit
 
 class WaiverVC: UIViewController {
 
+    @IBOutlet weak var agreeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        agreeButton.addTarget(nil, action: "agreeTapped", forControlEvents: UIControlEvents.TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
