@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-VRWaivers/Alamofire.framework"
   install_framework "Pods-VRWaivers/SnapKit.framework"
   install_framework "Pods-VRWaivers/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-VRWaivers/Alamofire.framework"
   install_framework "Pods-VRWaivers/SnapKit.framework"
   install_framework "Pods-VRWaivers/SwiftyJSON.framework"
 fi
