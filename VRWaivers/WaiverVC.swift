@@ -11,9 +11,17 @@ import UIKit
 class WaiverVC: UIViewController {
 
     @IBOutlet weak var agreeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        agreeButton.layer.cornerRadius = 3
+        agreeButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor
+        agreeButton.layer.borderWidth = 1
+        agreeButton.layer.shadowRadius = 10
+        agreeButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        agreeButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
+        agreeButton.layer.shadowOpacity = 0.15
         agreeButton.addTarget(nil, action: "agreeTapped", forControlEvents: UIControlEvents.TouchUpInside)
     }
 

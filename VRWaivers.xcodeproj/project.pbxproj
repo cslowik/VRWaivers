@@ -10,6 +10,9 @@
 		834CDA1B1D375C58001EF345 /* SignatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834CDA1A1D375C58001EF345 /* SignatureVC.swift */; };
 		834CDA1D1D376DA6001EF345 /* WaiverPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834CDA1C1D376DA6001EF345 /* WaiverPageVC.swift */; };
 		8364E2281D37414500D8F755 /* SigningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8364E2271D37414500D8F755 /* SigningVC.swift */; };
+		838986091D389E81008A209B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 838986071D389E81008A209B /* Montserrat-Bold.ttf */; };
+		8389860A1D389E81008A209B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 838986081D389E81008A209B /* Montserrat-Regular.ttf */; };
+		8389860C1D389F2D008A209B /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8389860B1D389F2D008A209B /* Montserrat-Light.ttf */; };
 		839C48761D36BFD900D2B8C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C48751D36BFD900D2B8C0 /* AppDelegate.swift */; };
 		839C48781D36BFD900D2B8C0 /* WaiverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C48771D36BFD900D2B8C0 /* WaiverVC.swift */; };
 		839C487B1D36BFD900D2B8C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839C48791D36BFD900D2B8C0 /* Main.storyboard */; };
@@ -54,6 +57,9 @@
 		834CDA1A1D375C58001EF345 /* SignatureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureVC.swift; sourceTree = "<group>"; };
 		834CDA1C1D376DA6001EF345 /* WaiverPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaiverPageVC.swift; sourceTree = "<group>"; };
 		8364E2271D37414500D8F755 /* SigningVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigningVC.swift; sourceTree = "<group>"; };
+		838986071D389E81008A209B /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		838986081D389E81008A209B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		8389860B1D389F2D008A209B /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		839C48721D36BFD800D2B8C0 /* VRWaivers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VRWaivers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		839C48751D36BFD900D2B8C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		839C48771D36BFD900D2B8C0 /* WaiverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiverVC.swift; sourceTree = "<group>"; };
@@ -109,6 +115,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		838986021D389D2D008A209B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8389860B1D389F2D008A209B /* Montserrat-Light.ttf */,
+				838986071D389E81008A209B /* Montserrat-Bold.ttf */,
+				838986081D389E81008A209B /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		839C48691D36BFD800D2B8C0 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +160,7 @@
 				839C487E1D36BFD900D2B8C0 /* LaunchScreen.storyboard */,
 				839C48811D36BFD900D2B8C0 /* Info.plist */,
 				83FD0E2A1D36C57D005EB824 /* SignatureView.swift */,
+				838986021D389D2D008A209B /* Fonts */,
 			);
 			path = VRWaivers;
 			sourceTree = "<group>";
@@ -244,8 +261,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8389860C1D389F2D008A209B /* Montserrat-Light.ttf in Resources */,
+				838986091D389E81008A209B /* Montserrat-Bold.ttf in Resources */,
 				839C48801D36BFD900D2B8C0 /* LaunchScreen.storyboard in Resources */,
 				839C487D1D36BFD900D2B8C0 /* Assets.xcassets in Resources */,
+				8389860A1D389E81008A209B /* Montserrat-Regular.ttf in Resources */,
 				839C487B1D36BFD900D2B8C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
