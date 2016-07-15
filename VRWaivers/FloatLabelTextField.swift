@@ -63,18 +63,18 @@ import UIKit
         }
     }
     
-    @IBInspectable var titleTextColour:UIColor = UIColor.grayColor() {
+    @IBInspectable var titleTextColor:UIColor = UIColor.grayColor() {
         didSet {
             if !isFirstResponder() {
-                title.textColor = titleTextColour
+                title.textColor = titleTextColor
             }
         }
     }
     
-    @IBInspectable var titleActiveTextColour:UIColor! {
+    @IBInspectable var titleActiveTextColor:UIColor! {
         didSet {
             if isFirstResponder() {
-                title.textColor = titleActiveTextColour
+                title.textColor = titleActiveTextColor
             }
         }
     }
@@ -96,9 +96,9 @@ import UIKit
         setTitlePositionForTextAlignment()
         let isResp = isFirstResponder()
         if let txt = text where !txt.isEmpty && isResp {
-            title.textColor = titleActiveTextColour
+            title.textColor = titleActiveTextColor
         } else {
-            title.textColor = titleTextColour
+            title.textColor = titleTextColor
         }
         // Should we show or hide the title label?
         if let txt = text where txt.isEmpty {
@@ -145,11 +145,11 @@ import UIKit
     // MARK:- Private Methods
     private func setup() {
         borderStyle = UITextBorderStyle.None
-        titleActiveTextColour = tintColor
+        titleActiveTextColor = tintColor
         // Set up title label
         title.alpha = 0.0
         title.font = titleFont
-        title.textColor = titleTextColour
+        title.textColor = titleTextColor
         if let str = placeholder where !str.isEmpty {
             title.text = str
             title.sizeToFit()

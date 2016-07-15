@@ -44,13 +44,14 @@ class SigningVC: UIViewController {
             "Accept": "application/json",
             "Content-Type": "application/json"
         ]
+        
         let params: [String: AnyObject] = [
             "given_name": firstNameTextField.text!,
             "family_name": lastNameTextField.text!,
             "phone_number": phoneNumberTextField.text!,
             "email_address": emailTextField.text!
         ]
-        print(params)
+        
         Alamofire.request(.POST, "https://connect.squareup.com/v2/customers", headers: headers, parameters: params, encoding: .JSON)
             .responseJSON { response in
                 print(response)

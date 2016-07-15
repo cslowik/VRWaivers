@@ -22,7 +22,7 @@ class WaiverVC: UIViewController {
         agreeButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         agreeButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
         agreeButton.layer.shadowOpacity = 0.1
-        agreeButton.addTarget(nil, action: "agreeTapped", forControlEvents: UIControlEvents.TouchUpInside)
+        agreeButton.addTarget(nil, action: Selector("agreeTapped"), forControlEvents: UIControlEvents.TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
