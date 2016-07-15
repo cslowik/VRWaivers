@@ -22,6 +22,8 @@ class SigningVC: UIViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
+    @IBOutlet weak var nameFields: UIView!
+    @IBOutlet weak var contactFields: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,7 @@ class SigningVC: UIViewController {
         completeButton.layer.shadowRadius = 10
         completeButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         completeButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
-        completeButton.layer.shadowOpacity = 0.15
+        completeButton.layer.shadowOpacity = 0.1
         completeButton.addTarget(nil, action: Selector("completeTapped"), forControlEvents: .TouchUpInside)
         completeButton.addTarget(self, action: #selector(SigningVC.submitCustomer), forControlEvents: .TouchUpInside)
     }
