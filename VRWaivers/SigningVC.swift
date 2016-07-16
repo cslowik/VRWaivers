@@ -60,34 +60,55 @@ class SigningVC: UIViewController {
             make.bottom.equalTo(view.snp_bottomMargin).offset(-20)
         }
         
-        // validation
-        let genericError = ValidationError(message: "😫")
-        let stringRequiredRule = ValidationRuleRequired<String?>(failureError: genericError)
-        let emailRule = ValidationRulePattern(pattern: .EmailAddress, failureError: genericError)
-        var phoneRules = ValidationRuleSet<String>()
-        let lengthRule = ValidationRuleLength(min: 7, max: 10, failureError: genericError)
-        let digitRule = ValidationRulePattern(pattern: .ContainsNumber, failureError: genericError)
-        phoneRules.addRule(digitRule)
-        phoneRules.addRule(lengthRule)
     }
 
     func submitCustomer() {
-        let headers: [String: String] = [
-            "Authorization": "Bearer sq0atp-rIBIuulvxZxX3JWh2wr91w",
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        ]
+        // validation
+        let genericError = ValidationError(message: "error")
+        let lengthRule = ValidationRuleLength(min: 2, failureError: genericError)
+        let emailRule = ValidationRulePattern(pattern: .EmailAddress, failureError: genericError)
+        var phoneRules = ValidationRuleSet<String>()
+        let phoneLengthRule = ValidationRuleLength(min: 7, max: 10, failureError: genericError)
+        let digitRule = ValidationRulePattern(pattern: .ContainsNumber, failureError: genericError)
+        phoneRules.addRule(digitRule)
+        phoneRules.addRule(phoneLengthRule)
         
-        let params: [String: AnyObject] = [
-            "given_name": firstNameTextField.text!,
-            "family_name": lastNameTextField.text!,
-            "phone_number": phoneNumberTextField.text!,
-            "email_address": emailTextField.text!
-        ]
+        var errors: [String] = []
         
-        Alamofire.request(.POST, "https://connect.squareup.com/v2/customers", headers: headers, parameters: params, encoding: .JSON)
-            .responseJSON { response in
-                print(response.result.value)
+        var result = Validator.validate(input: firstNameTextField.text, rule: lengthRule)
+        if result.isValid {
+            print("woo")
+        } else {
+            errors.append("firstName")
+        }
+        
+        result = Validator.validate(input: lastNameTextField.text, rule: lengthRule)
+        if result.isValid {
+            print("woo")
+        } else {
+            errors.append("lastName")
+        }
+        
+        if errors.count == 0 {
+            let headers: [String: String] = [
+                "Authorization": "Bearer sq0atp-rIBIuulvxZxX3JWh2wr91w",
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            ]
+            
+            let params: [String: AnyObject] = [
+                "given_name": firstNameTextField.text!,
+                "family_name": lastNameTextField.text!,
+                "phone_number": phoneNumberTextField.text!,
+                "email_address": emailTextField.text!
+            ]
+            
+            Alamofire.request(.POST, "https://connect.squareup.com/v2/customers", headers: headers, parameters: params, encoding: .JSON)
+                .responseJSON { response in
+                    print(response.result.value)
+            }
+        } else {
+            print("try again")
         }
     }
     
