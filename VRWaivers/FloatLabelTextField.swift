@@ -17,6 +17,7 @@ import UIKit
 @IBDesignable class FloatLabelTextField: UITextField {
     let animationDuration = 0.3
     var title = UILabel()
+    var error = false
     
     // MARK:- Properties
     override var accessibilityLabel:String? {
@@ -79,6 +80,14 @@ import UIKit
         }
     }
     
+    @IBInspectable var errorTextColor:UIColor! {
+        didSet {
+            if error {
+                title.textColor = errorTextColor
+            }
+        }
+    }
+    
     // MARK:- Init
     required init?(coder aDecoder:NSCoder) {
         super.init(coder:aDecoder)
@@ -96,9 +105,9 @@ import UIKit
         setTitlePositionForTextAlignment()
         let isResp = isFirstResponder()
         if let txt = text where !txt.isEmpty && isResp {
-            title.textColor = titleActiveTextColor
+            title.textColor = error ? errorTextColor : titleActiveTextColor
         } else {
-            title.textColor = titleTextColor
+            title.textColor = error ? errorTextColor : titleTextColor
         }
         // Should we show or hide the title label?
         if let txt = text where txt.isEmpty {
@@ -141,6 +150,15 @@ import UIKit
     }
     
     // MARK:- Public Methods
+    internal func toggleError(t: Bool) {
+        if !error {
+            title.textColor = errorTextColor
+            error = t
+        } else {
+            title.textColor = titleTextColor
+            error = t
+        }
+    }
     
     // MARK:- Private Methods
     private func setup() {

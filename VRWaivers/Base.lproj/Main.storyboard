@@ -137,6 +137,9 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColor">
                                                 <color key="value" red="0.15686274510000001" green="0.58823529409999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="errorTextColor">
+                                                <color key="value" red="0.99215686274509807" green="0.32549019607843138" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="IP5-Uf-4Kw" customClass="FloatLabelTextField" customModule="VRWaivers" customModuleProvider="target">
@@ -151,6 +154,9 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColor">
                                                 <color key="value" red="0.15686274510000001" green="0.58823529409999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="errorTextColor">
+                                                <color key="value" red="0.99215686270000003" green="0.32549019610000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -180,6 +186,9 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColor">
                                                 <color key="value" red="0.15686274510000001" green="0.58823529409999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="errorTextColor">
+                                                <color key="value" red="0.99215686270000003" green="0.32549019610000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="3Zj-bc-yNg" customClass="FloatLabelTextField" customModule="VRWaivers" customModuleProvider="target">
@@ -194,6 +203,9 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColor">
                                                 <color key="value" red="0.15686274510000001" green="0.58823529409999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="errorTextColor">
+                                                <color key="value" red="0.99215686270000003" green="0.32549019610000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>

@@ -14,10 +14,10 @@ import Validator
 
 class SigningVC: UIViewController {
 
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: FloatLabelTextField!
+    @IBOutlet weak var lastNameTextField: FloatLabelTextField!
+    @IBOutlet weak var phoneNumberTextField: FloatLabelTextField!
+    @IBOutlet weak var emailTextField: FloatLabelTextField!
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
@@ -73,23 +73,19 @@ class SigningVC: UIViewController {
         phoneRules.addRule(digitRule)
         phoneRules.addRule(phoneLengthRule)
         
-        var errors: [String] = []
+        let firstNameResult = Validator.validate(input: firstNameTextField.text, rule: lengthRule)
+        let lastNameResult = Validator.validate(input: lastNameTextField.text, rule: lengthRule)
+        let phoneNumberResult = Validator.validate(input: phoneNumberTextField.text, rules: phoneRules)
+        let emailAddressResult = Validator.validate(input: emailTextField.text, rule: emailRule)
         
-        var result = Validator.validate(input: firstNameTextField.text, rule: lengthRule)
-        if result.isValid {
-            print("woo")
-        } else {
-            errors.append("firstName")
-        }
+        let results = firstNameResult.merge(lastNameResult.merge(phoneNumberResult.merge(emailAddressResult)))
         
-        result = Validator.validate(input: lastNameTextField.text, rule: lengthRule)
-        if result.isValid {
-            print("woo")
-        } else {
-            errors.append("lastName")
-        }
-        
-        if errors.count == 0 {
+        if results.isValid {
+            firstNameTextField.toggleError(false)
+            lastNameTextField.toggleError(false)
+            phoneNumberTextField.toggleError(false)
+            emailTextField.toggleError(false)
+            
             let headers: [String: String] = [
                 "Authorization": "Bearer sq0atp-rIBIuulvxZxX3JWh2wr91w",
                 "Accept": "application/json",
@@ -108,7 +104,24 @@ class SigningVC: UIViewController {
                     print(response.result.value)
             }
         } else {
-            print("try again")
+            print("nicetry")
+            // handle validation errors
+            if !firstNameResult.isValid {
+                // if the first name is invalid
+                firstNameTextField.toggleError(true)
+            }
+            if !lastNameResult.isValid {
+                // if the last name is invalid
+                lastNameTextField.toggleError(true)
+            }
+            if !phoneNumberResult.isValid {
+                // if the phone number is invalid
+                phoneNumberTextField.toggleError(true)
+            }
+            if !emailAddressResult.isValid {
+                // if the email is invalid
+                emailTextField.toggleError(true)
+            }
         }
     }
     
