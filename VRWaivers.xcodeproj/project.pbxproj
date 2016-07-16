@@ -14,6 +14,7 @@
 		8389860A1D389E81008A209B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 838986081D389E81008A209B /* Montserrat-Regular.ttf */; };
 		8389860C1D389F2D008A209B /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8389860B1D389F2D008A209B /* Montserrat-Light.ttf */; };
 		8389860E1D38AAEF008A209B /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389860D1D38AAEF008A209B /* FloatLabelTextField.swift */; };
+		838986101D39B6D5008A209B /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389860F1D39B6D5008A209B /* Customer.swift */; };
 		839C48761D36BFD900D2B8C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C48751D36BFD900D2B8C0 /* AppDelegate.swift */; };
 		839C48781D36BFD900D2B8C0 /* WaiverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C48771D36BFD900D2B8C0 /* WaiverVC.swift */; };
 		839C487B1D36BFD900D2B8C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839C48791D36BFD900D2B8C0 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		838986081D389E81008A209B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		8389860B1D389F2D008A209B /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		8389860D1D38AAEF008A209B /* FloatLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
+		8389860F1D39B6D5008A209B /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Customer.swift; path = Model/Customer.swift; sourceTree = "<group>"; };
 		839C48721D36BFD800D2B8C0 /* VRWaivers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VRWaivers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		839C48751D36BFD900D2B8C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		839C48771D36BFD900D2B8C0 /* WaiverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiverVC.swift; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		838986111D39B6D9008A209B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8389860F1D39B6D5008A209B /* Customer.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		839C48691D36BFD800D2B8C0 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +162,7 @@
 		839C48741D36BFD900D2B8C0 /* VRWaivers */ = {
 			isa = PBXGroup;
 			children = (
+				838986111D39B6D9008A209B /* Model */,
 				839C48751D36BFD900D2B8C0 /* AppDelegate.swift */,
 				839C48771D36BFD900D2B8C0 /* WaiverVC.swift */,
 				8364E2271D37414500D8F755 /* SigningVC.swift */,
@@ -351,6 +362,7 @@
 				8389860E1D38AAEF008A209B /* FloatLabelTextField.swift in Sources */,
 				83FD0E2B1D36C57D005EB824 /* SignatureView.swift in Sources */,
 				834CDA1D1D376DA6001EF345 /* WaiverPageVC.swift in Sources */,
+				838986101D39B6D5008A209B /* Customer.swift in Sources */,
 				839C48781D36BFD900D2B8C0 /* WaiverVC.swift in Sources */,
 				8364E2281D37414500D8F755 /* SigningVC.swift in Sources */,
 				839C48761D36BFD900D2B8C0 /* AppDelegate.swift in Sources */,

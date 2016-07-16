@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Alamofire
 import SwiftyJSON
+import Validator
 
 class SigningVC: UIViewController {
 
@@ -42,7 +43,6 @@ class SigningVC: UIViewController {
         completeButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         completeButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
         completeButton.layer.shadowOpacity = 0.1
-        completeButton.addTarget(nil, action: Selector("completeTapped"), forControlEvents: .TouchUpInside)
         completeButton.addTarget(self, action: #selector(SigningVC.submitCustomer), forControlEvents: .TouchUpInside)
         
         // layout stuff
@@ -59,6 +59,16 @@ class SigningVC: UIViewController {
         completeButton.snp_makeConstraints { (make) in
             make.bottom.equalTo(view.snp_bottomMargin).offset(-20)
         }
+        
+        // validation
+        let genericError = ValidationError(message: "😫")
+        let stringRequiredRule = ValidationRuleRequired<String?>(failureError: genericError)
+        let emailRule = ValidationRulePattern(pattern: .EmailAddress, failureError: genericError)
+        var phoneRules = ValidationRuleSet<String>()
+        let lengthRule = ValidationRuleLength(min: 7, max: 10, failureError: genericError)
+        let digitRule = ValidationRulePattern(pattern: .ContainsNumber, failureError: genericError)
+        phoneRules.addRule(digitRule)
+        phoneRules.addRule(lengthRule)
     }
 
     func submitCustomer() {
@@ -77,7 +87,7 @@ class SigningVC: UIViewController {
         
         Alamofire.request(.POST, "https://connect.squareup.com/v2/customers", headers: headers, parameters: params, encoding: .JSON)
             .responseJSON { response in
-                print(response)
+                print(response.result.value)
         }
     }
     
