@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="ax4-I4-csV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G26a" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2QO-Uu-S5H">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,12 +11,172 @@
             <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
+            <string>Montserrat-Bold</string>
         </mutableArray>
         <mutableArray key="Montserrat-Light.ttf">
             <string>Montserrat-Light</string>
         </mutableArray>
+        <mutableArray key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+        </mutableArray>
     </customFonts>
     <scenes>
+        <!--WelcomeVC-->
+        <scene sceneID="Ho6-ie-8aH">
+            <objects>
+                <viewController id="2QO-Uu-S5H" customClass="WelcomeVC" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4bB-YG-INI"/>
+                        <viewControllerLayoutGuide type="bottom" id="olj-G8-Vsy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vfh-oJ-KwZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="69C-9V-bZP">
+                                <rect key="frame" x="581" y="172" width="316" height="424"/>
+                                <subviews>
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sr3-bB-edq">
+                                        <rect key="frame" x="216" y="216" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="9">
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="ZAD-sf-XJL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Sb-KX-wqi">
+                                        <rect key="frame" x="0.0" y="108" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="4">
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="Peo-Y7-7wX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efi-kL-TBv">
+                                        <rect key="frame" x="108" y="108" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="5">
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="vb0-0N-tkP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umh-x7-0ok">
+                                        <rect key="frame" x="216" y="108" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="6">
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="Opb-Jv-RRJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4E5-Rw-Tpt">
+                                        <rect key="frame" x="216" y="0.0" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="3">
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="5e9-ow-xW2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHC-n8-OB8">
+                                        <rect key="frame" x="108" y="324" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="0">
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="s1X-ri-7vk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2f-cv-zLU">
+                                        <rect key="frame" x="0.0" y="216" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="7">
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="yva-Bh-WpU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13Z-vz-Puh">
+                                        <rect key="frame" x="108" y="216" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="8">
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="XbX-kA-jWx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgS-Qa-yWA">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="1"/>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="Ipi-Oo-eSP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8SG-al-Cls">
+                                        <rect key="frame" x="108" y="0.0" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="2">
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="M8a-Qf-R91"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VRLAB-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="yTy-wx-DG5">
+                                <rect key="frame" x="48" y="122" width="475" height="185"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="singleTextField" translatesAutoresizingMaskIntoConstraints="NO" id="ZSC-qS-k0i">
+                                <rect key="frame" x="75" y="468" width="420" height="60"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SV3-ny-akL">
+                                <rect key="frame" x="20" y="290" width="530" height="129"/>
+                                <string key="text">Welcome to VR Lab!
+
+Check in with your 
+phone number to get started!</string>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pna-5s-GpU">
+                                <rect key="frame" x="75" y="468" width="420" height="60"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bc2-5Q-ZmD">
+                                <rect key="frame" x="75" y="536" width="420" height="60"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.58823529409999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="420" id="64P-FA-mqU"/>
+                                    <constraint firstAttribute="height" constant="60" id="FGn-Bi-3ch"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
+                                <state key="normal" title="Check In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="phoneNumberLabel" destination="Pna-5s-GpU" id="gSr-Ic-crX"/>
+                        <outlet property="signInButton" destination="Bc2-5Q-ZmD" id="Zn6-cR-KPN"/>
+                        <outletCollection property="numberPad" destination="13Z-vz-Puh" collectionClass="NSMutableArray" id="kGA-G6-hxM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YeD-D6-jZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="152"/>
+        </scene>
         <!--Waiver PageVC-->
         <scene sceneID="Qlk-Vi-rck">
             <objects>
@@ -296,7 +456,18 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
         </scene>
     </scenes>
     <resources>
+        <image name="0" width="230" height="230"/>
+        <image name="1" width="230" height="230"/>
+        <image name="2" width="230" height="230"/>
+        <image name="3" width="230" height="230"/>
+        <image name="4" width="230" height="230"/>
+        <image name="5" width="230" height="230"/>
+        <image name="6" width="230" height="230"/>
+        <image name="7" width="230" height="230"/>
+        <image name="8" width="230" height="230"/>
+        <image name="9" width="230" height="230"/>
         <image name="VRLAB-Logo" width="1440" height="560"/>
+        <image name="singleTextField" width="420" height="60"/>
         <image name="textFieldPair" width="420" height="120"/>
     </resources>
 </document>
