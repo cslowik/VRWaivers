@@ -1,0 +1,6 @@
+framework module PopupCollectionViewController {
+  umbrella header "PopupCollectionViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

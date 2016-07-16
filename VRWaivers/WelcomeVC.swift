@@ -8,6 +8,7 @@
 
 import UIKit
 import Validator
+import RealmSwift
 
 class WelcomeVC: UIViewController {
 
@@ -15,6 +16,8 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet var numberPad: [UIButton]!
     @IBOutlet weak var deleteButton: UIButton!
+    
+    var realm: Realm!
     
     var phoneNumber = "" {
         didSet {
@@ -44,6 +47,13 @@ class WelcomeVC: UIViewController {
         signInButton.layer.shadowOpacity = 0.1
         signInButton.addTarget(self, action: #selector(self.checkIn), forControlEvents: UIControlEvents.TouchUpInside)
         
+        do {
+            realm = try Realm()
+        } catch let error as NSError {
+            // handle error
+            print(error)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,13 +86,12 @@ class WelcomeVC: UIViewController {
         phoneRules.addRule(phoneLengthRule)
         let phoneNumberResult = Validator.validate(input: phoneNumber, rules: phoneRules)
         if phoneNumberResult.isValid {
-            // if the phone number is valid, present customer selection screen
-            let checkin = CheckInVC()
-            checkin.modalPresentationStyle = .FullScreen
-            checkin.modalTransitionStyle = .FlipHorizontal
-            presentViewController(checkin, animated: true, completion: {
-                //completion
-            })
+            // if the phone number is valid, query db for customers
+            let predicate = NSPredicate(format: "phoneNumber = %@", phoneNumber)
+            let customers = realm.objects(Customer.self).filter(predicate)
+            if customers.count == 0 {
+                print("no customers found")
+            }
         }
     }
 
