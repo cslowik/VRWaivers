@@ -42,7 +42,7 @@ class WelcomeVC: UIViewController {
         signInButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         signInButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
         signInButton.layer.shadowOpacity = 0.1
-        signInButton.addTarget(nil, action: #selector(self.checkIn), forControlEvents: UIControlEvents.TouchUpInside)
+        signInButton.addTarget(self, action: #selector(self.checkIn), forControlEvents: UIControlEvents.TouchUpInside)
         
     }
 
@@ -76,8 +76,13 @@ class WelcomeVC: UIViewController {
         phoneRules.addRule(phoneLengthRule)
         let phoneNumberResult = Validator.validate(input: phoneNumber, rules: phoneRules)
         if phoneNumberResult.isValid {
-            // if the phone number is valid, check the db for existing customer
-            
+            // if the phone number is valid, present customer selection screen
+            let checkin = CheckInVC()
+            checkin.modalPresentationStyle = .FullScreen
+            checkin.modalTransitionStyle = .FlipHorizontal
+            presentViewController(checkin, animated: true, completion: {
+                //completion
+            })
         }
     }
 

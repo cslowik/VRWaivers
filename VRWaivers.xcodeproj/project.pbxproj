@@ -12,6 +12,9 @@
 		8364E2281D37414500D8F755 /* SigningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8364E2271D37414500D8F755 /* SigningVC.swift */; };
 		83682C9E1D3A8B80005176AC /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83682C9D1D3A8B80005176AC /* Customer.swift */; };
 		83682CA01D3A8F77005176AC /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83682C9F1D3A8F77005176AC /* WelcomeVC.swift */; };
+		83682CA21D3AF28F005176AC /* CheckInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83682CA11D3AF28F005176AC /* CheckInVC.swift */; };
+		83682CA41D3AF5BD005176AC /* LoginPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83682CA31D3AF5BD005176AC /* LoginPopup.xib */; };
+		83682CA61D3AF5E2005176AC /* LoginPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83682CA51D3AF5E2005176AC /* LoginPopup.swift */; };
 		838986091D389E81008A209B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 838986071D389E81008A209B /* Montserrat-Bold.ttf */; };
 		8389860A1D389E81008A209B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 838986081D389E81008A209B /* Montserrat-Regular.ttf */; };
 		8389860C1D389F2D008A209B /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8389860B1D389F2D008A209B /* Montserrat-Light.ttf */; };
@@ -62,6 +65,9 @@
 		8364E2271D37414500D8F755 /* SigningVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigningVC.swift; sourceTree = "<group>"; };
 		83682C9D1D3A8B80005176AC /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Customer.swift; path = Model/Customer.swift; sourceTree = "<group>"; };
 		83682C9F1D3A8F77005176AC /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		83682CA11D3AF28F005176AC /* CheckInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInVC.swift; sourceTree = "<group>"; };
+		83682CA31D3AF5BD005176AC /* LoginPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPopup.xib; sourceTree = "<group>"; };
+		83682CA51D3AF5E2005176AC /* LoginPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPopup.swift; sourceTree = "<group>"; };
 		838986071D389E81008A209B /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		838986081D389E81008A209B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		8389860B1D389F2D008A209B /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -171,6 +177,9 @@
 				834CDA1A1D375C58001EF345 /* SignatureVC.swift */,
 				83682C9F1D3A8F77005176AC /* WelcomeVC.swift */,
 				839C48791D36BFD900D2B8C0 /* Main.storyboard */,
+				83682CA31D3AF5BD005176AC /* LoginPopup.xib */,
+				83682CA51D3AF5E2005176AC /* LoginPopup.swift */,
+				83682CA11D3AF28F005176AC /* CheckInVC.swift */,
 				834CDA1C1D376DA6001EF345 /* WaiverPageVC.swift */,
 				839C487C1D36BFD900D2B8C0 /* Assets.xcassets */,
 				839C487E1D36BFD900D2B8C0 /* LaunchScreen.storyboard */,
@@ -282,6 +291,7 @@
 				838986091D389E81008A209B /* Montserrat-Bold.ttf in Resources */,
 				839C48801D36BFD900D2B8C0 /* LaunchScreen.storyboard in Resources */,
 				839C487D1D36BFD900D2B8C0 /* Assets.xcassets in Resources */,
+				83682CA41D3AF5BD005176AC /* LoginPopup.xib in Resources */,
 				8389860A1D389E81008A209B /* Montserrat-Regular.ttf in Resources */,
 				839C487B1D36BFD900D2B8C0 /* Main.storyboard in Resources */,
 			);
@@ -365,9 +375,11 @@
 				8389860E1D38AAEF008A209B /* FloatLabelTextField.swift in Sources */,
 				83FD0E2B1D36C57D005EB824 /* SignatureView.swift in Sources */,
 				834CDA1D1D376DA6001EF345 /* WaiverPageVC.swift in Sources */,
+				83682CA61D3AF5E2005176AC /* LoginPopup.swift in Sources */,
 				83682C9E1D3A8B80005176AC /* Customer.swift in Sources */,
 				839C48781D36BFD900D2B8C0 /* WaiverVC.swift in Sources */,
 				8364E2281D37414500D8F755 /* SigningVC.swift in Sources */,
+				83682CA21D3AF28F005176AC /* CheckInVC.swift in Sources */,
 				83682CA01D3A8F77005176AC /* WelcomeVC.swift in Sources */,
 				839C48761D36BFD900D2B8C0 /* AppDelegate.swift in Sources */,
 				834CDA1B1D375C58001EF345 /* SignatureVC.swift in Sources */,
