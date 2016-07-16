@@ -125,6 +125,15 @@
                                             <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="M8a-Qf-R91"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" alpha="0.0" tag="99" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkW-5F-fyh">
+                                        <rect key="frame" x="216" y="324" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="back">
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="2QO-Uu-S5H" eventType="touchUpInside" id="L4S-LB-HaD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -137,7 +146,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SV3-ny-akL">
                                 <rect key="frame" x="20" y="290" width="530" height="129"/>
-                                <string key="text">Welcome to VR Lab!
+                                <string key="text">Welcome to VR Lab
 
 Check in with your 
 phone number to get started!</string>
@@ -168,6 +177,7 @@ phone number to get started!</string>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="deleteButton" destination="hkW-5F-fyh" id="YOB-sH-ApU"/>
                         <outlet property="phoneNumberLabel" destination="Pna-5s-GpU" id="gSr-Ic-crX"/>
                         <outlet property="signInButton" destination="Bc2-5Q-ZmD" id="Zn6-cR-KPN"/>
                         <outletCollection property="numberPad" destination="13Z-vz-Puh" collectionClass="NSMutableArray" id="kGA-G6-hxM"/>
@@ -175,7 +185,7 @@ phone number to get started!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YeD-D6-jZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="826" y="152"/>
+            <point key="canvasLocation" x="-106" y="152"/>
         </scene>
         <!--Waiver PageVC-->
         <scene sceneID="Qlk-Vi-rck">
@@ -264,7 +274,7 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="1032"/>
+            <point key="canvasLocation" x="2125" y="1020"/>
         </scene>
         <!--Player Info-->
         <scene sceneID="iBR-BA-cQe">
@@ -405,7 +415,7 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4L-HU-tti" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2715" y="1032"/>
+            <point key="canvasLocation" x="3203" y="1020"/>
         </scene>
         <!--Sign and Play!-->
         <scene sceneID="qPH-yc-UxG">
@@ -452,7 +462,7 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JnZ-vd-bcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3804" y="1032"/>
+            <point key="canvasLocation" x="4292" y="1020"/>
         </scene>
     </scenes>
     <resources>
@@ -467,6 +477,7 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
         <image name="8" width="230" height="230"/>
         <image name="9" width="230" height="230"/>
         <image name="VRLAB-Logo" width="1440" height="560"/>
+        <image name="back" width="230" height="230"/>
         <image name="singleTextField" width="420" height="60"/>
         <image name="textFieldPair" width="420" height="120"/>
     </resources>

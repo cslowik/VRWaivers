@@ -68,7 +68,7 @@ class SigningVC: UIViewController {
         let lengthRule = ValidationRuleLength(min: 2, failureError: genericError)
         let emailRule = ValidationRulePattern(pattern: .EmailAddress, failureError: genericError)
         var phoneRules = ValidationRuleSet<String>()
-        let phoneLengthRule = ValidationRuleLength(min: 7, max: 10, failureError: genericError)
+        let phoneLengthRule = ValidationRuleLength(min: 10, max: 10, failureError: genericError)
         let digitRule = ValidationRulePattern(pattern: .ContainsNumber, failureError: genericError)
         phoneRules.addRule(digitRule)
         phoneRules.addRule(phoneLengthRule)
