@@ -15,6 +15,7 @@ class CustomerCardVC: UIViewController {
     @IBOutlet weak var customerName: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var emailAddress: UILabel!
+    @IBOutlet weak var selectButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,8 @@ class CustomerCardVC: UIViewController {
         customerName.text = (customer?.firstName)! + " " + (customer?.lastName)!
         phoneNumber.text = customer?.phoneNumber
         emailAddress.text = customer?.emailAddress
+        
+        selectButton.addTarget(nil, action: #selector(self.checkIn), forControlEvents: .TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,5 +44,15 @@ class CustomerCardVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func checkIn() {
+        // set current customer
+        Customer.current.firstName = (customer?.firstName)!
+        Customer.current.lastName = (customer?.lastName)!
+        Customer.current.phoneNumber = (customer?.phoneNumber)!
+        Customer.current.emailAddress = (customer?.emailAddress)!
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("checkedIn", object: nil)
+    }
 
 }

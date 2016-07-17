@@ -14,8 +14,11 @@
             <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
+            <string>Montserrat-Bold</string>
         </mutableArray>
         <mutableArray key="Montserrat-Light.ttf">
+            <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
@@ -212,7 +215,7 @@ phone number to get started!</string>
                                     <constraint firstAttribute="width" constant="420" id="mlk-Gm-H1p"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
-                                <state key="normal" title="Check In">
+                                <state key="normal" title="Select">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -244,11 +247,12 @@ phone number to get started!</string>
                         <outlet property="customerName" destination="4Zl-Lg-69T" id="mEP-dW-edf"/>
                         <outlet property="emailAddress" destination="htF-WO-TY4" id="mYf-V9-81w"/>
                         <outlet property="phoneNumber" destination="Qim-uz-65Q" id="5pl-lK-byC"/>
+                        <outlet property="selectButton" destination="h9U-6W-tSj" id="FUK-Rg-muF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCj-vL-YVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1930" y="140"/>
+            <point key="canvasLocation" x="842" y="807"/>
         </scene>
         <!--Waiver PageVC-->
         <scene sceneID="Qlk-Vi-rck">
@@ -259,6 +263,50 @@ phone number to get started!</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ho-Hf-5xp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3105" y="152"/>
+        </scene>
+        <!--Checked InVC-->
+        <scene sceneID="XSv-ct-cIS">
+            <objects>
+                <viewController storyboardIdentifier="checkedInVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XkD-LK-Uam" customClass="CheckedInVC" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EKT-qN-jHC"/>
+                        <viewControllerLayoutGuide type="bottom" id="0o2-Bx-QJ4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sQV-vn-CbP">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Customer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5T-Ld-fM3">
+                                <rect key="frame" x="302" y="309" width="420" height="30"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wS9-NV-Jku">
+                                <rect key="frame" x="302" y="381" width="420" height="30"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAV-f8-fNZ">
+                                <rect key="frame" x="302" y="419" width="420" height="30"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="customerName" destination="X5T-Ld-fM3" id="eOJ-m5-90X"/>
+                        <outlet property="emailAddress" destination="zAV-f8-fNZ" id="Csn-iF-9k3"/>
+                        <outlet property="phoneNumber" destination="wS9-NV-Jku" id="2WP-Pf-yCN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVc-9P-Nw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1985" y="152"/>
         </scene>
         <!--WaiverVC-->
         <scene sceneID="tne-QT-ifu">

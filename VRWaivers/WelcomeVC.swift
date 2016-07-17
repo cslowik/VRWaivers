@@ -20,6 +20,7 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     
     var realm: Realm!
+    var popupVC: PopupCollectionViewController!
     
     var phoneNumber = "" {
         didSet {
@@ -39,8 +40,9 @@ class WelcomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationController?.navigationBarHidden = true
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.dismissPopup), name: "checkedIn", object: nil)
         
         signInButton.layer.cornerRadius = 3
         signInButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor
@@ -82,6 +84,9 @@ class WelcomeVC: UIViewController {
     }
 
     func checkIn() {
+        
+        popupVC = PopupCollectionViewController(fromVC: self.navigationController!)
+        
         // validation
         var phoneRules = ValidationRuleSet<String>()
         let phoneLengthRule = ValidationRuleLength(min: 10, max: 10, failureError: ValidationError(message: "Not a full phone number"))
@@ -115,7 +120,6 @@ class WelcomeVC: UIViewController {
                     newVC.customer = cust
                     customerControllers.append(newVC)
                 }
-                let popupVC = PopupCollectionViewController(fromVC: self.navigationController!)
                 popupVC.presentViewControllers(customerControllers,
                                                options: [.Layout(.Center),
                                                         .PopupHeight(360),
@@ -123,6 +127,16 @@ class WelcomeVC: UIViewController {
                                                         .OverlayColor(UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:0.85))],
                                                completion: nil)
             }
+        }
+    }
+    
+    func dismissPopup() {
+        popupVC.dismissViewController { 
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let checkedInVC: CheckedInVC = storyboard.instantiateViewControllerWithIdentifier("checkedInVC") as! CheckedInVC
+            self.presentViewController(checkedInVC, animated: true, completion: {
+                //completion
+            })
         }
     }
 

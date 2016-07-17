@@ -10,6 +10,7 @@
 		834CDA1B1D375C58001EF345 /* SignatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834CDA1A1D375C58001EF345 /* SignatureVC.swift */; };
 		834CDA1D1D376DA6001EF345 /* WaiverPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834CDA1C1D376DA6001EF345 /* WaiverPageVC.swift */; };
 		8355C3081D3B413200779FA2 /* PagingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355C3071D3B413200779FA2 /* PagingFlowLayout.swift */; };
+		8355C30A1D3B610D00779FA2 /* CheckedInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355C3091D3B610D00779FA2 /* CheckedInVC.swift */; };
 		836122151D3B400200B01B8F /* PopupCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836122141D3B400200B01B8F /* PopupCollectionViewController.swift */; };
 		8364E2281D37414500D8F755 /* SigningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8364E2271D37414500D8F755 /* SigningVC.swift */; };
 		83682C9E1D3A8B80005176AC /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83682C9D1D3A8B80005176AC /* Customer.swift */; };
@@ -63,6 +64,7 @@
 		834CDA1A1D375C58001EF345 /* SignatureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureVC.swift; sourceTree = "<group>"; };
 		834CDA1C1D376DA6001EF345 /* WaiverPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaiverPageVC.swift; sourceTree = "<group>"; };
 		8355C3071D3B413200779FA2 /* PagingFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingFlowLayout.swift; sourceTree = "<group>"; };
+		8355C3091D3B610D00779FA2 /* CheckedInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckedInVC.swift; sourceTree = "<group>"; };
 		836122141D3B400200B01B8F /* PopupCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupCollectionViewController.swift; sourceTree = "<group>"; };
 		8364E2271D37414500D8F755 /* SigningVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigningVC.swift; sourceTree = "<group>"; };
 		83682C9D1D3A8B80005176AC /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Customer.swift; path = Model/Customer.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				839C48751D36BFD900D2B8C0 /* AppDelegate.swift */,
 				839C48771D36BFD900D2B8C0 /* WaiverVC.swift */,
 				8364E2271D37414500D8F755 /* SigningVC.swift */,
+				8355C3091D3B610D00779FA2 /* CheckedInVC.swift */,
 				83A25C401D3B308100769081 /* CustomerCardVC.swift */,
 				834CDA1A1D375C58001EF345 /* SignatureVC.swift */,
 				83682C9F1D3A8F77005176AC /* WelcomeVC.swift */,
@@ -381,6 +384,7 @@
 				839C48781D36BFD900D2B8C0 /* WaiverVC.swift in Sources */,
 				8364E2281D37414500D8F755 /* SigningVC.swift in Sources */,
 				83682CA01D3A8F77005176AC /* WelcomeVC.swift in Sources */,
+				8355C30A1D3B610D00779FA2 /* CheckedInVC.swift in Sources */,
 				839C48761D36BFD900D2B8C0 /* AppDelegate.swift in Sources */,
 				834CDA1B1D375C58001EF345 /* SignatureVC.swift in Sources */,
 			);
