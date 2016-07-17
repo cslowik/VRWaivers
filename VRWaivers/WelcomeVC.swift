@@ -91,7 +91,15 @@ class WelcomeVC: UIViewController {
     func newCustomerAndGo() {
         newCustomer()
         Customer.current.phoneNumber = phoneNumber
-        popupVC.dismissViewController { 
+        if (popupVC != nil) {
+            popupVC.dismissViewController {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let waiverFlow: WaiverPageVC = storyboard.instantiateViewControllerWithIdentifier("pageViewController") as! WaiverPageVC
+                self.presentViewController(waiverFlow, animated: true, completion: {
+                    //completion
+                })
+            }
+        } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let waiverFlow: WaiverPageVC = storyboard.instantiateViewControllerWithIdentifier("pageViewController") as! WaiverPageVC
             self.presentViewController(waiverFlow, animated: true, completion: {
