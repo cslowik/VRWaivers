@@ -85,8 +85,6 @@ class WelcomeVC: UIViewController {
 
     func checkIn() {
         
-        popupVC = PopupCollectionViewController(fromVC: self.navigationController!)
-        
         // validation
         var phoneRules = ValidationRuleSet<String>()
         let phoneLengthRule = ValidationRuleLength(min: 10, max: 10, failureError: ValidationError(message: "Not a full phone number"))
@@ -112,6 +110,8 @@ class WelcomeVC: UIViewController {
                     //completion
                 })
             } else {
+                
+                popupVC = PopupCollectionViewController(fromVC: self.navigationController!)
                 // if customers exist, show them as a card carousel, also a new button
                 print(String(customers.count) + " customers found")
                 var customerControllers: [UIViewController] = []
