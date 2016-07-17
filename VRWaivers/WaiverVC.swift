@@ -15,6 +15,15 @@ class WaiverVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setup()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    func setup() {
         agreeButton.layer.cornerRadius = 3
         agreeButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor
         agreeButton.layer.borderWidth = 1
@@ -24,11 +33,5 @@ class WaiverVC: UIViewController {
         agreeButton.layer.shadowOpacity = 0.1
         agreeButton.addTarget(nil, action: Selector("agreeTapped"), forControlEvents: UIControlEvents.TouchUpInside)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 

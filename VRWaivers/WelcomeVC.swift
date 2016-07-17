@@ -91,6 +91,11 @@ class WelcomeVC: UIViewController {
             let customers = realm.objects(Customer.self).filter(predicate)
             if customers.count == 0 {
                 print("no customers found")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let waiverFlow = storyboard.instantiateViewControllerWithIdentifier("pageViewController")
+                self.presentViewController(waiverFlow, animated: true, completion: {
+                    //completion
+                })
             }
         }
     }
