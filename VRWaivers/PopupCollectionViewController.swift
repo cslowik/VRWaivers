@@ -93,6 +93,7 @@ public class PopupCollectionViewController: UIViewController {
         view.addSubview(newCustomerButton)
         
         //newCustomerButton.frame = CGRect(x: 0, y: 0, width: 420, height: 60)
+        newCustomerButton.alpha = 0
         newCustomerButton.backgroundColor = UIColor(red:0.157,  green:0.589,  blue:0.801, alpha:1)
         newCustomerButton.layer.cornerRadius = 3
         newCustomerButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor
@@ -226,14 +227,23 @@ private extension PopupCollectionViewController {
         switch animation {
         case .FadeIn:
             self.fadeIn(layout) {
+                UIView.animateWithDuration(0.35, animations: {
+                    self.newCustomerButton.alpha = 1
+                })
                 completion?()
             }
         case .SlideUp:
             self.slideUp(layout) {
+                UIView.animateWithDuration(0.35, animations: {
+                    self.newCustomerButton.alpha = 1
+                })
                 completion?()
             }
         case .SlideLeft:
             self.slideLeft(layout) {
+                UIView.animateWithDuration(0.35, animations: {
+                    self.newCustomerButton.alpha = 1
+                })
                 completion?()
             }
         }
@@ -242,6 +252,9 @@ private extension PopupCollectionViewController {
     func hide(animation: PopupAnimation, completion: (() -> Void)?) {
         self.popupCollectionView.frame.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: self.popupHeight)
         self.popupCollectionView.frame.origin.x = layout.origin(self.popupCollectionView).x
+        UIView.animateWithDuration(0.15, animations: {
+            self.newCustomerButton.alpha = 0
+        })
         switch animation {
         case .FadeIn:
             self.fadeOut {
