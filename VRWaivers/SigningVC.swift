@@ -45,6 +45,10 @@ class SigningVC: UIViewController {
         completeButton.layer.shadowOpacity = 0.1
         completeButton.addTarget(self, action: #selector(SigningVC.submitCustomer), forControlEvents: .TouchUpInside)
         
+        if !Customer.current.phoneNumber.isEmpty {
+            phoneNumberTextField.text = Customer.current.phoneNumber
+        }
+        
         // layout stuff
         nameFields.snp_makeConstraints { (make) in
             make.centerY.equalTo(view.snp_centerY)

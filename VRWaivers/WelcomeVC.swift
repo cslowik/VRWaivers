@@ -91,8 +91,14 @@ class WelcomeVC: UIViewController {
             let customers = realm.objects(Customer.self).filter(predicate)
             if customers.count == 0 {
                 print("no customers found")
+                
+                // create customer if none found
+                let newCustomer = Customer()
+                newCustomer.phoneNumber = phoneNumber
+                Customer.current.phoneNumber = phoneNumber
+                
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let waiverFlow = storyboard.instantiateViewControllerWithIdentifier("pageViewController")
+                let waiverFlow: WaiverPageVC = storyboard.instantiateViewControllerWithIdentifier("pageViewController") as! WaiverPageVC
                 self.presentViewController(waiverFlow, animated: true, completion: {
                     //completion
                 })

@@ -17,9 +17,11 @@ class Customer: Object {
     dynamic var emailAddress: String = ""
     dynamic var signature: NSData? = nil
     
+    static let current = Customer()
+    
 // Specify properties to ignore (Realm won't persist these)
     
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
+  override static func ignoredProperties() -> [String] {
+    return ["current"]
+  }
 }
