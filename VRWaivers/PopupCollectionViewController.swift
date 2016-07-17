@@ -29,10 +29,11 @@ public class PopupCollectionViewController: UIViewController {
         
         func origin(view: UIView) -> CGPoint {
             let size: CGSize = UIScreen.mainScreen().bounds.size
+            let xOrigin = (size.width - view.frame.width) / 2
             switch self {
-            case .Top: return CGPoint(x: (size.width - view.frame.width) / 2, y: 0)
-            case .Center: return CGPoint(x: (size.width - view.frame.width) / 2, y: (size.height - view.frame.height) / 2)
-            case .Bottom: return CGPoint(x: (size.width - view.frame.width) / 2, y: size.height - view.frame.height)
+            case .Top: return CGPoint(x: xOrigin, y: 0)
+            case .Center: return CGPoint(x: xOrigin, y: (size.height - view.frame.height) / 2)
+            case .Bottom: return CGPoint(x: xOrigin, y: size.height - view.frame.height)
             }
         }
     }

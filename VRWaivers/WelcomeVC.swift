@@ -119,7 +119,8 @@ class WelcomeVC: UIViewController {
                 popupVC.presentViewControllers(customerControllers,
                                                options: [.Layout(.Center),
                                                         .PopupHeight(360),
-                                                        .CellWidth(480)],
+                                                        .CellWidth(480),
+                                                        .OverlayColor(UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:0.85))],
                                                completion: nil)
             }
         }

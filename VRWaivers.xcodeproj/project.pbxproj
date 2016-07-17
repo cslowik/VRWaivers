@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		834CDA1B1D375C58001EF345 /* SignatureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834CDA1A1D375C58001EF345 /* SignatureVC.swift */; };
 		834CDA1D1D376DA6001EF345 /* WaiverPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834CDA1C1D376DA6001EF345 /* WaiverPageVC.swift */; };
-		8355C3061D3B40A800779FA2 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355C3051D3B40A800779FA2 /* UPCarouselFlowLayout.swift */; };
 		8355C3081D3B413200779FA2 /* PagingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8355C3071D3B413200779FA2 /* PagingFlowLayout.swift */; };
 		836122151D3B400200B01B8F /* PopupCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836122141D3B400200B01B8F /* PopupCollectionViewController.swift */; };
 		8364E2281D37414500D8F755 /* SigningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8364E2271D37414500D8F755 /* SigningVC.swift */; };
@@ -63,7 +62,6 @@
 		4683D86AF55D32AD12CF9864 /* Pods-VRWaivers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VRWaivers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VRWaivers/Pods-VRWaivers.debug.xcconfig"; sourceTree = "<group>"; };
 		834CDA1A1D375C58001EF345 /* SignatureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureVC.swift; sourceTree = "<group>"; };
 		834CDA1C1D376DA6001EF345 /* WaiverPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaiverPageVC.swift; sourceTree = "<group>"; };
-		8355C3051D3B40A800779FA2 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		8355C3071D3B413200779FA2 /* PagingFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingFlowLayout.swift; sourceTree = "<group>"; };
 		836122141D3B400200B01B8F /* PopupCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupCollectionViewController.swift; sourceTree = "<group>"; };
 		8364E2271D37414500D8F755 /* SigningVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigningVC.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 				838986021D389D2D008A209B /* Fonts */,
 				836122141D3B400200B01B8F /* PopupCollectionViewController.swift */,
 				8355C3071D3B413200779FA2 /* PagingFlowLayout.swift */,
-				8355C3051D3B40A800779FA2 /* UPCarouselFlowLayout.swift */,
 			);
 			path = VRWaivers;
 			sourceTree = "<group>";
@@ -376,7 +373,6 @@
 			files = (
 				8389860E1D38AAEF008A209B /* FloatLabelTextField.swift in Sources */,
 				836122151D3B400200B01B8F /* PopupCollectionViewController.swift in Sources */,
-				8355C3061D3B40A800779FA2 /* UPCarouselFlowLayout.swift in Sources */,
 				83FD0E2B1D36C57D005EB824 /* SignatureView.swift in Sources */,
 				8355C3081D3B413200779FA2 /* PagingFlowLayout.swift in Sources */,
 				834CDA1D1D376DA6001EF345 /* WaiverPageVC.swift in Sources */,

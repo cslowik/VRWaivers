@@ -9,12 +9,21 @@
 import UIKit
 
 class CustomerCardVC: UIViewController {
+    
     var customer: Customer?
+    
     @IBOutlet weak var customerName: UILabel!
+    @IBOutlet weak var phoneNumber: UILabel!
+    @IBOutlet weak var emailAddress: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.view.layer.cornerRadius = 6.0
+        
+        customerName.text = (customer?.firstName)! + " " + (customer?.lastName)!
+        phoneNumber.text = customer?.phoneNumber
+        emailAddress.text = customer?.emailAddress
     }
 
     override func didReceiveMemoryWarning() {
