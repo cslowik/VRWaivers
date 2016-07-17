@@ -26,6 +26,13 @@ class CustomerCardVC: UIViewController {
         phoneNumber.text = customer?.phoneNumber
         emailAddress.text = customer?.emailAddress
         
+        selectButton.layer.cornerRadius = 3
+        selectButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor
+        selectButton.layer.borderWidth = 1
+        selectButton.layer.shadowRadius = 10
+        selectButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        selectButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
+        selectButton.layer.shadowOpacity = 0.1
         selectButton.addTarget(nil, action: #selector(self.checkIn), forControlEvents: .TouchUpInside)
     }
 

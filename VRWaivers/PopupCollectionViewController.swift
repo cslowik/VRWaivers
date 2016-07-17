@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 public enum PopupCollectionViewControllerOption {
     case Layout(PopupCollectionViewController.PopupLayout)
@@ -23,6 +24,8 @@ public protocol PopupViewCellDelegate {
 }
 
 public class PopupCollectionViewController: UIViewController {
+    
+    let newCustomerButton = UIButton()
     
     public enum PopupLayout {
         case Top, Center, Bottom
@@ -86,6 +89,30 @@ public class PopupCollectionViewController: UIViewController {
         self.baseScrollView.frame = self.view.frame
         self.baseScrollView.contentInset.top = layout.origin(self.popupCollectionView).y
         self.defaultContentOffset.y = -self.baseScrollView.contentInset.top
+        
+        view.addSubview(newCustomerButton)
+        
+        //newCustomerButton.frame = CGRect(x: 0, y: 0, width: 420, height: 60)
+        newCustomerButton.backgroundColor = UIColor(red:0.157,  green:0.589,  blue:0.801, alpha:1)
+        newCustomerButton.layer.cornerRadius = 3
+        newCustomerButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor
+        newCustomerButton.layer.borderWidth = 1
+        newCustomerButton.layer.shadowRadius = 10
+        newCustomerButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        newCustomerButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
+        newCustomerButton.layer.shadowOpacity = 0.1
+        let titleString = NSAttributedString(string: "New Customer", attributes: [NSFontAttributeName: UIFont(name: "Montserrat-Bold", size: 20)!,
+                                                                                    NSForegroundColorAttributeName: UIColor.whiteColor()])
+        newCustomerButton.setAttributedTitle(titleString, forState: .Normal)
+        newCustomerButton.addTarget(self, action: #selector(newCustomerAndGo), forControlEvents: .TouchUpInside)
+        
+        newCustomerButton.snp_makeConstraints { (make) in
+            make.width.equalTo(420)
+            make.height.equalTo(60)
+            make.centerX.equalTo(view.snp_centerX)
+            make.bottom.equalTo(view.snp_bottomMargin).offset(-20)
+        }
+        
     }
     
     override public func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
@@ -137,6 +164,10 @@ public class PopupCollectionViewController: UIViewController {
             self.addChildViewController(vc)
         }
         self.popupCollectionView.reloadData()
+    }
+    
+    func newCustomerAndGo() {
+        NSNotificationCenter.defaultCenter().postNotificationName("newCustomerAndGo", object: nil)
     }
 }
 

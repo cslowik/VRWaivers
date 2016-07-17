@@ -187,9 +187,9 @@
 				839C48811D36BFD900D2B8C0 /* Info.plist */,
 				8389860D1D38AAEF008A209B /* FloatLabelTextField.swift */,
 				83FD0E2A1D36C57D005EB824 /* SignatureView.swift */,
-				838986021D389D2D008A209B /* Fonts */,
 				836122141D3B400200B01B8F /* PopupCollectionViewController.swift */,
 				8355C3071D3B413200779FA2 /* PagingFlowLayout.swift */,
+				838986021D389D2D008A209B /* Fonts */,
 			);
 			path = VRWaivers;
 			sourceTree = "<group>";

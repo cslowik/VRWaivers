@@ -43,6 +43,7 @@ class WelcomeVC: UIViewController {
         
         self.navigationController?.navigationBarHidden = true
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.dismissPopup), name: "checkedIn", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.newCustomerAndGo), name: "newCustomerAndGo", object: nil)
         
         signInButton.layer.cornerRadius = 3
         signInButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor
@@ -83,6 +84,22 @@ class WelcomeVC: UIViewController {
         }
     }
 
+    func newCustomer() {
+        Customer.current = Customer()
+    }
+    
+    func newCustomerAndGo() {
+        newCustomer()
+        Customer.current.phoneNumber = phoneNumber
+        popupVC.dismissViewController { 
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let waiverFlow: WaiverPageVC = storyboard.instantiateViewControllerWithIdentifier("pageViewController") as! WaiverPageVC
+            self.presentViewController(waiverFlow, animated: true, completion: {
+                //completion
+            })
+        }
+    }
+    
     func checkIn() {
         
         // validation
@@ -100,15 +117,8 @@ class WelcomeVC: UIViewController {
                 print("no customers found")
                 
                 // create customer if none found
-                let newCustomer = Customer()
-                newCustomer.phoneNumber = phoneNumber
-                Customer.current.phoneNumber = phoneNumber
+                newCustomerAndGo()
                 
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let waiverFlow: WaiverPageVC = storyboard.instantiateViewControllerWithIdentifier("pageViewController") as! WaiverPageVC
-                self.presentViewController(waiverFlow, animated: true, completion: {
-                    //completion
-                })
             } else {
                 
                 popupVC = PopupCollectionViewController(fromVC: self.navigationController!)
