@@ -13,6 +13,7 @@ class CheckedInVC: UIViewController {
     @IBOutlet weak var customerName: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var emailAddress: UILabel!
+    @IBOutlet weak var signature: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,9 @@ class CheckedInVC: UIViewController {
         customerName.text = Customer.current.firstName + " " + Customer.current.lastName
         phoneNumber.text = Customer.current.phoneNumber
         emailAddress.text = Customer.current.emailAddress
+        if let sig = Customer.current.signature {
+            signature.image = UIImage(data: sig)
+        }
     }
 
     override func didReceiveMemoryWarning() {

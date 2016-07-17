@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SignatureVC: UIViewController {
 
     @IBOutlet weak var signatureView: SignatureView!
     @IBOutlet weak var saveButton: UIButton!
+    var realm: Realm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,15 @@ class SignatureVC: UIViewController {
         saveButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         saveButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
         saveButton.layer.shadowOpacity = 0.1
-        saveButton.addTarget(nil, action: "saveTapped", forControlEvents: .TouchUpInside)
+        saveButton.addTarget(self, action: #selector(saveSignature), forControlEvents: .TouchUpInside)
+        saveButton.addTarget(nil, action: #selector(WaiverPageVC.saveTapped), forControlEvents: .TouchUpInside)
+        
+        do {
+            realm = try Realm()
+        } catch let error as NSError {
+            // handle error
+            print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,14 +41,17 @@ class SignatureVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func saveSignature() {
+        if signatureView.containsSignature {
+            // convert signature to data
+            // save signature to db
+            try! realm.write {
+                Customer.current.signature = UIImagePNGRepresentation(signatureView.getSignature()!)
+            }
+            
+        }
+        
+        // notify pageviewcontroller of tap
     }
-    */
 
 }

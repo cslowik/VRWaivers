@@ -47,6 +47,7 @@ class SigningVC: UIViewController {
         completeButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
         completeButton.layer.shadowOpacity = 0.1
         completeButton.addTarget(self, action: #selector(SigningVC.submitCustomer), forControlEvents: .TouchUpInside)
+        completeButton.addTarget(nil, action: #selector(WaiverPageVC.completeTapped), forControlEvents: .TouchUpInside)
         
         if !Customer.current.phoneNumber.isEmpty {
             phoneNumberTextField.text = Customer.current.phoneNumber
@@ -124,8 +125,10 @@ class SigningVC: UIViewController {
             newCustomer.phoneNumber = params["phone_number"] as! String
             newCustomer.emailAddress = params["email_address"] as! String
             
+            Customer.current = newCustomer
+            
             try! realm.write {
-                realm.add(newCustomer)
+                realm.add(Customer.current)
             }
             
             

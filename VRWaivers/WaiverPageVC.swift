@@ -13,7 +13,8 @@ class WaiverPageVC: UIPageViewController {
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("waiverVC"),
                 UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("signingVC"),
-                UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("signatureVC")]
+                UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("signatureVC"),
+                UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("checkedInVC")]
     }()
 
     override func viewDidLoad() {
@@ -49,6 +50,10 @@ class WaiverPageVC: UIPageViewController {
     }
     
     func saveTapped() {
-    
+        let nextViewController = orderedViewControllers[3]
+        setViewControllers([nextViewController],
+                           direction: .Forward,
+                           animated: true,
+                           completion: nil)
     }
 }

@@ -17,7 +17,7 @@ class Customer: Object {
     dynamic var emailAddress: String = ""
     dynamic var signature: NSData? = nil
     
-    static let current = Customer()
+    static var current = Customer()
     
 // Specify properties to ignore (Realm won't persist these)
     
