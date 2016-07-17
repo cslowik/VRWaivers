@@ -32,6 +32,11 @@ class WaiverPageVC: UIPageViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func startOver() {
+        print("test")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     func agreeTapped() {
         let nextViewController = orderedViewControllers[1]

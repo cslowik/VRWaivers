@@ -11,6 +11,7 @@ import RealmSwift
 
 class SignatureVC: UIViewController {
 
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var signatureView: SignatureView!
     @IBOutlet weak var saveButton: UIButton!
     var realm: Realm!
@@ -26,6 +27,8 @@ class SignatureVC: UIViewController {
         saveButton.layer.shadowOpacity = 0.1
         saveButton.addTarget(self, action: #selector(saveSignature), forControlEvents: .TouchUpInside)
         saveButton.addTarget(nil, action: #selector(WaiverPageVC.saveTapped), forControlEvents: .TouchUpInside)
+        
+        cancelButton.addTarget(nil, action: #selector(WaiverPageVC.startOver), forControlEvents: .TouchUpInside)
         
         do {
             realm = try Realm()

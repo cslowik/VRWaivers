@@ -10,6 +10,7 @@ import UIKit
 
 class WaiverVC: UIViewController {
 
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var agreeButton: UIButton!
     
     override func viewDidLoad() {
@@ -32,6 +33,8 @@ class WaiverVC: UIViewController {
         agreeButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
         agreeButton.layer.shadowOpacity = 0.1
         agreeButton.addTarget(nil, action: #selector(WaiverPageVC.agreeTapped), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        cancelButton.addTarget(nil, action: #selector(WaiverPageVC.startOver), forControlEvents: .TouchUpInside)
     }
 }
 

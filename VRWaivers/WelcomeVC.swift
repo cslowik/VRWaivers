@@ -46,7 +46,7 @@ class WelcomeVC: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.newCustomerAndGo), name: "newCustomerAndGo", object: nil)
         
         signInButton.layer.cornerRadius = 3
-        signInButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor
+        signInButton.layer.borderColor = UIColor(red:0.145,  green:0.506,  blue:0.098, alpha:1).CGColor
         signInButton.layer.borderWidth = 1
         signInButton.layer.shadowRadius = 10
         signInButton.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -78,10 +78,20 @@ class WelcomeVC: UIViewController {
         }
         
         if phoneNumber != "" {
-            deleteButton.alpha = 1
+            UIView.animateWithDuration(0.35, animations: { 
+                self.deleteButton.alpha = 1
+                self.signInButton.alpha = 1
+            })
         } else {
-            deleteButton.alpha = 0
+            UIView.animateWithDuration(0.35, animations: { 
+                self.deleteButton.alpha = 0
+                self.signInButton.alpha = 0
+            })
         }
+    }
+    
+    func startOver() {
+        print("test")
     }
 
     func newCustomer() {

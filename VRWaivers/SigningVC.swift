@@ -15,6 +15,7 @@ import RealmSwift
 
 class SigningVC: UIViewController {
 
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var firstNameTextField: FloatLabelTextField!
     @IBOutlet weak var lastNameTextField: FloatLabelTextField!
     @IBOutlet weak var phoneNumberTextField: FloatLabelTextField!
@@ -48,6 +49,8 @@ class SigningVC: UIViewController {
         completeButton.layer.shadowOpacity = 0.1
         completeButton.addTarget(self, action: #selector(SigningVC.submitCustomer), forControlEvents: .TouchUpInside)
         completeButton.addTarget(nil, action: #selector(WaiverPageVC.completeTapped), forControlEvents: .TouchUpInside)
+        
+        cancelButton.addTarget(nil, action: #selector(WaiverPageVC.startOver), forControlEvents: .TouchUpInside)
         
         if !Customer.current.phoneNumber.isEmpty {
             phoneNumberTextField.text = Customer.current.phoneNumber
