@@ -11,6 +11,7 @@ import SnapKit
 import Alamofire
 import SwiftyJSON
 import Validator
+import RealmSwift
 
 class SigningVC: UIViewController {
 
@@ -25,6 +26,8 @@ class SigningVC: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var nameFields: UIView!
     @IBOutlet weak var contactFields: UIView!
+    
+    var realm: Realm!
     
     var keyboardConstant: CGFloat = 0.0
     
@@ -47,6 +50,13 @@ class SigningVC: UIViewController {
         
         if !Customer.current.phoneNumber.isEmpty {
             phoneNumberTextField.text = Customer.current.phoneNumber
+        }
+        
+        do {
+            realm = try Realm()
+        } catch let error as NSError {
+            // handle error
+            print(error)
         }
         
         // layout stuff
@@ -107,6 +117,18 @@ class SigningVC: UIViewController {
                 .responseJSON { response in
                     print(response.result.value)
             }
+            
+            let newCustomer = Customer()
+            newCustomer.firstName = params["given_name"] as! String
+            newCustomer.lastName = params["family_name"] as! String
+            newCustomer.phoneNumber = params["phone_number"] as! String
+            newCustomer.emailAddress = params["email_address"] as! String
+            
+            try! realm.write {
+                realm.add(newCustomer)
+            }
+            
+            
         } else {
             print("nicetry")
             // handle validation errors

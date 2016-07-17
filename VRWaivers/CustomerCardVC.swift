@@ -1,5 +1,5 @@
 //
-//  CheckInVC.swift
+//  CustomerCardVC.swift
 //  VRWaivers
 //
 //  Created by Chris Slowik on 7/16/16.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class CheckInVC: UIViewController {
-
+class CustomerCardVC: UIViewController {
+    var customer: Customer?
+    @IBOutlet weak var customerName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

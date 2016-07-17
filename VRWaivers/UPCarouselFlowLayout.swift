@@ -127,4 +127,3 @@ public class UPCarouselFlowLayout: UICollectionViewFlowLayout {
         return targetContentOffset
     }
 }
-

@@ -54,6 +54,8 @@ import UIKit
         }
     }
     
+    @IBInspectable var isPhoneNumber:Bool = false
+    
     @IBInspectable var hintYPadding:CGFloat = 0.0
     
     @IBInspectable var titleYPadding:CGFloat = 0.0 {
@@ -151,13 +153,8 @@ import UIKit
     
     // MARK:- Public Methods
     internal func toggleError(t: Bool) {
-        if !error {
-            title.textColor = errorTextColor
-            error = t
-        } else {
-            title.textColor = titleTextColor
-            error = t
-        }
+        error = t
+        title.textColor = t ? errorTextColor : titleTextColor
     }
     
     // MARK:- Private Methods
@@ -214,4 +211,5 @@ import UIKit
             self.title.frame = r
             }, completion:nil)
     }
+    
 }

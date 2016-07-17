@@ -18,15 +18,15 @@ public enum PopupCollectionViewControllerOption {
 }
 
 public protocol PopupViewCellDelegate {
-
+    
     func popupCollectionViewControllerDidShow(viewController: PopupCollectionViewController)
 }
 
 public class PopupCollectionViewController: UIViewController {
-
+    
     public enum PopupLayout {
         case Top, Center, Bottom
-
+        
         func origin(view: UIView) -> CGPoint {
             let size: CGSize = UIScreen.mainScreen().bounds.size
             switch self {
@@ -36,15 +36,15 @@ public class PopupCollectionViewController: UIViewController {
             }
         }
     }
-
+    
     public enum PopupAnimation {
         case FadeIn, SlideUp, SlideLeft
     }
-
+    
     public enum BackgroundStyle {
         case BlackFilter(alpha: CGFloat)
     }
-
+    
     // Custom Property
     private var layout: PopupLayout = .Center
     private var animation: PopupAnimation = .SlideUp
@@ -53,7 +53,7 @@ public class PopupCollectionViewController: UIViewController {
     private var cellWidth: CGFloat = 300
     private var contentEdgeInsets: CGFloat = 24
     public var closedHandler: (() -> Void)?
-
+    
     private var popupCollectionView: UICollectionView! {
         didSet {
             self.popupCollectionView.delegate = self
@@ -65,51 +65,51 @@ public class PopupCollectionViewController: UIViewController {
             self.popupCollectionView.showsHorizontalScrollIndicator = false
         }
     }
-
+    
     private var collectionViewLayout: PagingFlowLayout! {
         didSet {
             self.collectionViewLayout.scrollDirection = .Horizontal
             self.collectionViewLayout.pagingDelegate = self
         }
     }
-
+    
     private var baseScrollView = UIScrollView()
     private var defaultContentOffset = CGPoint.zero
-
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.baseScrollView.frame = self.view.frame
         self.baseScrollView.contentInset.top = layout.origin(self.popupCollectionView).y
         self.defaultContentOffset.y = -self.baseScrollView.contentInset.top
     }
-
+    
     override public func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return .All
     }
-
+    
     override public func shouldAutorotate() -> Bool {
         return false
     }
-
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-
+    
     public init(fromVC: UIViewController) {
         self.init()
         fromVC.addChildViewController(self)
         UIApplication.sharedApplication().keyWindow?.addSubview(self.view)
         self.didMoveToParentViewController(fromVC)
     }
-
+    
     public func presentViewControllers(viewControllers: [UIViewController], options: [PopupCollectionViewControllerOption]? = nil, completion: (() -> Void)?) {
         for viewController in viewControllers {
             self.addChildViewController(viewController)
@@ -121,7 +121,7 @@ public class PopupCollectionViewController: UIViewController {
             completion?()
         }
     }
-
+    
     public func dismissViewController(completion: (() -> Void)?) {
         let animation = self.animation ?? .SlideUp
         self.hide(animation) {
@@ -130,7 +130,7 @@ public class PopupCollectionViewController: UIViewController {
             self.closedHandler?()
         }
     }
-
+    
     public func appendChildViewControllers(childControllers: [UIViewController]) {
         for vc in childControllers {
             self.addChildViewController(vc)
@@ -140,7 +140,7 @@ public class PopupCollectionViewController: UIViewController {
 }
 
 private extension PopupCollectionViewController {
-
+    
     func setOptions(options: [PopupCollectionViewControllerOption]?) {
         guard let options = options else { return }
         for option in options {
@@ -160,13 +160,13 @@ private extension PopupCollectionViewController {
             }
         }
     }
-
+    
     func configure() {
         self.collectionViewLayout = PagingFlowLayout()
         self.popupCollectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: self.collectionViewLayout)
         self.view.hidden = true
         self.view.frame = UIScreen.mainScreen().bounds
-
+        
         self.baseScrollView.scrollEnabled = true
         self.baseScrollView.alwaysBounceHorizontal = false
         self.baseScrollView.alwaysBounceVertical = true
@@ -176,17 +176,17 @@ private extension PopupCollectionViewController {
         self.view.addSubview(self.baseScrollView)
         self.baseScrollView.addSubview(self.popupCollectionView)
     }
-
+    
     @objc func didTapGesture(sender: UITapGestureRecognizer) {
         self.dismissViewController(nil)
     }
-
+    
     func registerTapGesture() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapGesture(_:)))
         gestureRecognizer.delegate = self
         self.baseScrollView.addGestureRecognizer(gestureRecognizer)
     }
-
+    
     func show(layout: PopupLayout, animation: PopupAnimation, completion: (() -> Void)?) {
         self.popupCollectionView.frame.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: self.popupHeight)
         self.popupCollectionView.frame.origin.x = self.layout.origin(self.popupCollectionView).x
@@ -206,7 +206,7 @@ private extension PopupCollectionViewController {
             }
         }
     }
-
+    
     func hide(animation: PopupAnimation, completion: (() -> Void)?) {
         self.popupCollectionView.frame.size = CGSize(width: UIScreen.mainScreen().bounds.width, height: self.popupHeight)
         self.popupCollectionView.frame.origin.x = layout.origin(self.popupCollectionView).x
@@ -228,7 +228,7 @@ private extension PopupCollectionViewController {
             }
         }
     }
-
+    
     func didClosePopupView() {
         for vc in self.childViewControllers {
             vc.removeFromParentViewController()
@@ -236,7 +236,7 @@ private extension PopupCollectionViewController {
         self.view.hidden = true
         self.removeFromParentViewController()
     }
-
+    
     func clean() {
         self.popupCollectionView.removeFromSuperview()
         self.baseScrollView.removeFromSuperview()
@@ -244,14 +244,14 @@ private extension PopupCollectionViewController {
 }
 
 private extension PopupCollectionViewController {
-
+    
     func fadeIn(layout: PopupLayout, completion: () -> Void) {
         self.baseScrollView.contentInset.top = layout.origin(self.popupCollectionView).y
         self.view.hidden = false
         self.popupCollectionView.alpha = 0.0
         self.baseScrollView.alpha = 0.0
         self.popupCollectionView.transform = CGAffineTransformMakeScale(0.9, 0.9)
-
+        
         UIView.animateWithDuration(
             0.3, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .CurveEaseInOut, animations: {
                 self.popupCollectionView.alpha = 1.0
@@ -261,7 +261,7 @@ private extension PopupCollectionViewController {
                 completion()
         })
     }
-
+    
     func fadeOut(completion: () -> Void) {
         UIView.animateWithDuration(
             0.3, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .CurveEaseInOut, animations: {
@@ -272,13 +272,13 @@ private extension PopupCollectionViewController {
                 completion()
         })
     }
-
+    
     func slideUp(layout: PopupLayout, completion: () -> Void) {
         self.baseScrollView.contentInset.top = layout.origin(self.popupCollectionView).y
         self.view.hidden = false
         self.baseScrollView.alpha = 0.0
         self.baseScrollView.contentOffset.y = -UIScreen.mainScreen().bounds.height
-
+        
         UIView.animateWithDuration(
             0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .CurveLinear, animations: {
                 self.baseScrollView.alpha = 1.0
@@ -288,7 +288,7 @@ private extension PopupCollectionViewController {
                 completion()
         })
     }
-
+    
     func slideOut(completion: () -> Void) {
         UIView.animateWithDuration(
             0.5, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .CurveLinear, animations: {
@@ -298,7 +298,7 @@ private extension PopupCollectionViewController {
                 completion()
         })
     }
-
+    
     func slideLeft(layout: PopupLayout, completion: () -> Void) {
         self.baseScrollView.contentInset.top = layout.origin(self.popupCollectionView).y
         self.view.hidden = false
@@ -313,7 +313,7 @@ private extension PopupCollectionViewController {
                 completion()
         })
     }
-
+    
     func slideLeftOut(completion: () -> Void) {
         UIView.animateWithDuration(
             0.5, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .CurveLinear, animations: {
@@ -326,7 +326,7 @@ private extension PopupCollectionViewController {
 }
 
 extension PopupCollectionViewController: UIScrollViewDelegate {
-
+    
     public func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let delta = self.defaultContentOffset.y - scrollView.contentOffset.y
         if delta > 50 {
@@ -338,22 +338,22 @@ extension PopupCollectionViewController: UIScrollViewDelegate {
 }
 
 extension PopupCollectionViewController: UICollectionViewDataSource {
-
+    
     public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.childViewControllers.count
     }
-
+    
     public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("UICollectionViewCell", forIndexPath: indexPath)
         cell.layer.cornerRadius = 2
         cell.layer.masksToBounds = true
-
+        
         let vc = self.childViewControllers[indexPath.item]
         vc.view.frame = cell.bounds
         cell.addSubview(vc.view)
         return cell
     }
-
+    
     public func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         let vc = self.childViewControllers[indexPath.item]
         vc.view.removeFromSuperview()
@@ -361,22 +361,22 @@ extension PopupCollectionViewController: UICollectionViewDataSource {
 }
 
 extension PopupCollectionViewController: UICollectionViewDelegateFlowLayout {
-
+    
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: self.cellWidth, height: self.popupHeight)
     }
-
+    
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: self.contentEdgeInsets, bottom: 0, right: self.contentEdgeInsets)
     }
-
+    
     public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return self.contentEdgeInsets / 2
     }
 }
 
 extension PopupCollectionViewController: PagingFlowLayoutDelegate {
-
+    
     public func collectionView(collectionView: UICollectionView, layout pagingFlowLayout: PagingFlowLayout, changePage page: Int) {
         if self.childViewControllers.count > page {
             let vc = self.childViewControllers[page]
@@ -386,14 +386,14 @@ extension PopupCollectionViewController: PagingFlowLayoutDelegate {
 }
 
 extension PopupCollectionViewController: UIGestureRecognizerDelegate {
-
+    
     public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
         return gestureRecognizer.view == touch.view
     }
 }
 
 extension UIViewController {
-
+    
     public func popupCollectionViewController() -> PopupCollectionViewController? {
         var parentVC = self.parentViewController
         while !(parentVC is PopupCollectionViewController) {

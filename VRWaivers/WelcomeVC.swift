@@ -9,6 +9,8 @@
 import UIKit
 import Validator
 import RealmSwift
+import PopupCollectionViewController
+import UPCarouselFlowLayout
 
 class WelcomeVC: UIViewController {
 
@@ -38,6 +40,8 @@ class WelcomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.navigationBarHidden = true
+        
         signInButton.layer.cornerRadius = 3
         signInButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor
         signInButton.layer.borderWidth = 1
@@ -102,6 +106,21 @@ class WelcomeVC: UIViewController {
                 self.presentViewController(waiverFlow, animated: true, completion: {
                     //completion
                 })
+            } else {
+                // if customers exist, show them as a card carousel, also a new button
+                print(String(customers.count) + " customers found")
+                var customerControllers: [UIViewController] = []
+                for cust in customers {
+                    let newVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("customerCard") as! CustomerCardVC
+                    newVC.customer = cust
+                    customerControllers.append(newVC)
+                }
+                let popupVC = PopupCollectionViewController(fromVC: self.navigationController!)
+                popupVC.presentViewControllers(customerControllers,
+                                               options: [.Layout(.Center),
+                                                        .PopupHeight(360),
+                                                        .CellWidth(480)],
+                                               completion: nil)
             }
         }
     }
