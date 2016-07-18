@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Bold.ttf">
@@ -32,7 +31,7 @@
         <!--WelcomeVC-->
         <scene sceneID="Ho6-ie-8aH">
             <objects>
-                <viewController id="2QO-Uu-S5H" customClass="WelcomeVC" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2QO-Uu-S5H" customClass="WelcomeVC" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4bB-YG-INI"/>
                         <viewControllerLayoutGuide type="bottom" id="olj-G8-Vsy"/>
@@ -187,6 +186,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="a42-i1-qhN"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="deleteButton" destination="hkW-5F-fyh" id="YOB-sH-ApU"/>
@@ -261,7 +261,9 @@
         <!--Waiver PageVC-->
         <scene sceneID="Qlk-Vi-rck">
             <objects>
-                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ax4-I4-csV" customClass="WaiverPageVC" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ax4-I4-csV" customClass="WaiverPageVC" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
+                    <value key="contentSizeForViewInPopover" type="size" width="1024" height="768"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ho-Hf-5xp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -288,13 +290,13 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Customer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5T-Ld-fM3">
                                 <rect key="frame" x="528" y="83" width="420" height="30"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You're all checked in!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwP-XK-7uz">
                                 <rect key="frame" x="528" y="226" width="420" height="30"/>
-                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="26"/>
                                 <color key="textColor" red="0.15686274510000001" green="0.58823529409999997" blue="0.072986577179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -314,13 +316,18 @@
                                 <rect key="frame" x="20" y="73" width="475" height="185"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXB-qs-owv">
+                                <rect key="frame" x="900" y="607" width="110" height="112"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="customerName" destination="X5T-Ld-fM3" id="eOJ-m5-90X"/>
                         <outlet property="emailAddress" destination="zAV-f8-fNZ" id="Csn-iF-9k3"/>
+                        <outlet property="operatorButton" destination="tXB-qs-owv" id="rLF-J5-43a"/>
                         <outlet property="phoneNumber" destination="wS9-NV-Jku" id="2WP-Pf-yCN"/>
                         <outlet property="signature" destination="DeE-Uq-kfa" id="tVG-DH-0u9"/>
                     </connections>
@@ -341,7 +348,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywr-qV-cKn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywr-qV-cKn">
                                 <rect key="frame" x="20" y="212" width="984" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="7Jo-S7-Raf"/>
@@ -352,7 +359,7 @@ THE TERMS AND CONDITIONS OF THIS AGREEMENT.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lej-wI-TGj">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lej-wI-TGj">
                                 <rect key="frame" x="20" y="287" width="984" height="427"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Some people may experience symptoms when experiencing virtual reality, including motion sickness, nausea, disorientation, visual abnormalities, or other discomfort. VR experiences may include flashing lights or environments. Anyone who has had a seizure, loss of awareness, or other symptoms linked to an epileptic condition should consult a physician before participating in VR experiences.  Some cutting edge content may be in a beta or in-progress state, which may heighten or increase the likelihood of experiencing symptoms.
@@ -363,13 +370,13 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VRLAB-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Imp-HU-paf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="VRLAB-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Imp-HU-paf">
                                 <rect key="frame" x="298" y="61" width="429" height="167"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="429" id="re5-xt-r9f"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdJ-lX-Nou">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdJ-lX-Nou">
                                 <rect key="frame" x="302" y="688" width="420" height="60"/>
                                 <color key="backgroundColor" red="0.15686274509803921" green="0.58823529411764708" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -389,20 +396,18 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                         <constraints>
                             <constraint firstItem="Ywr-qV-cKn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="192" id="EG5-t6-AuP"/>
                             <constraint firstItem="Ywr-qV-cKn" firstAttribute="trailing" secondItem="lej-wI-TGj" secondAttribute="trailing" id="GfZ-I3-HSP"/>
-                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="H6e-Mi-DbI"/>
                             <constraint firstItem="lej-wI-TGj" firstAttribute="top" secondItem="Ywr-qV-cKn" secondAttribute="bottom" constant="8" symbolic="YES" id="Kyw-hg-p7U"/>
-                            <constraint firstAttribute="bottom" secondItem="PdJ-lX-Nou" secondAttribute="bottom" constant="20" symbolic="YES" id="Pfa-bh-9c6"/>
                             <constraint firstItem="lej-wI-TGj" firstAttribute="leading" secondItem="PdJ-lX-Nou" secondAttribute="leading" constant="-282" id="RKY-yS-RR8"/>
                             <constraint firstItem="lej-wI-TGj" firstAttribute="trailing" secondItem="PdJ-lX-Nou" secondAttribute="trailing" constant="282" id="SXd-vV-5Mk"/>
                             <constraint firstItem="Imp-HU-paf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="fS5-WA-Af5"/>
                             <constraint firstItem="Imp-HU-paf" firstAttribute="centerX" secondItem="Ywr-qV-cKn" secondAttribute="centerX" id="hgs-AX-VaK"/>
-                            <constraint firstItem="Ywr-qV-cKn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kcM-dw-xuB"/>
                             <constraint firstItem="lej-wI-TGj" firstAttribute="top" secondItem="Imp-HU-paf" secondAttribute="bottom" constant="59" id="oJX-2c-55A"/>
                             <constraint firstItem="Ywr-qV-cKn" firstAttribute="leading" secondItem="lej-wI-TGj" secondAttribute="leading" id="w0b-PD-PHt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lej-wI-TGj" secondAttribute="bottom" constant="54" id="yd6-So-6Hn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CRZ-CI-p1P"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="agreeButton" destination="PdJ-lX-Nou" id="1SB-dm-lqY"/>
@@ -544,6 +549,7 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Player Info" id="Cvf-va-PWQ"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="cancelButton" destination="lV4-Yd-aDO" id="wBC-LM-noK"/>
@@ -603,6 +609,7 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign and Play!" id="J14-1r-1GO"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="cancelButton" destination="f06-B6-8DR" id="oGE-WC-g3G"/>
@@ -617,8 +624,9 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
         <!--Navigation Controller-->
         <scene sceneID="dXM-Ya-iLa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rnf-Dt-PxJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rnf-Dt-PxJ" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qde-uC-rOE">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>

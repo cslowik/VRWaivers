@@ -20,6 +20,8 @@ class WaiverPageVC: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(completeTapped), name: "completeTapped", object: nil)
+        
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
                                direction: .Forward,
@@ -34,7 +36,6 @@ class WaiverPageVC: UIPageViewController {
     }
     
     func startOver() {
-        print("test")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 

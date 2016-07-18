@@ -105,16 +105,12 @@ class WelcomeVC: UIViewController {
             popupVC.dismissViewController {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let waiverFlow: WaiverPageVC = storyboard.instantiateViewControllerWithIdentifier("pageViewController") as! WaiverPageVC
-                self.presentViewController(waiverFlow, animated: true, completion: {
-                    //completion
-                })
+                self.navigationController?.pushViewController(waiverFlow, animated: true)
             }
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let waiverFlow: WaiverPageVC = storyboard.instantiateViewControllerWithIdentifier("pageViewController") as! WaiverPageVC
-            self.presentViewController(waiverFlow, animated: true, completion: {
-                //completion
-            })
+            self.navigationController?.pushViewController(waiverFlow, animated: true)
         }
     }
     

@@ -48,7 +48,6 @@ class SigningVC: UIViewController {
         completeButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
         completeButton.layer.shadowOpacity = 0.1
         completeButton.addTarget(self, action: #selector(SigningVC.submitCustomer), forControlEvents: .TouchUpInside)
-        completeButton.addTarget(nil, action: #selector(WaiverPageVC.completeTapped), forControlEvents: .TouchUpInside)
         
         cancelButton.addTarget(nil, action: #selector(WaiverPageVC.startOver), forControlEvents: .TouchUpInside)
         
@@ -134,6 +133,7 @@ class SigningVC: UIViewController {
                 realm.add(Customer.current)
             }
             
+            NSNotificationCenter.defaultCenter().postNotificationName("completeTapped", object: nil)
             
         } else {
             print("nicetry")

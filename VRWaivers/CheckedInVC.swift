@@ -14,10 +14,13 @@ class CheckedInVC: UIViewController {
     @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var emailAddress: UILabel!
     @IBOutlet weak var signature: UIImageView!
+    @IBOutlet weak var operatorButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        operatorButton.addTarget(self, action: #selector(operatorMode), forControlEvents: .TouchUpInside)
+        
         customerName.text = Customer.current.firstName + " " + Customer.current.lastName
         phoneNumber.text = Customer.current.phoneNumber
         emailAddress.text = Customer.current.emailAddress
@@ -31,15 +34,11 @@ class CheckedInVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func operatorMode() {
+        UIPasteboard.generalPasteboard().string = Customer.current.emailAddress
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
