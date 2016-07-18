@@ -38,11 +38,19 @@ class WelcomeVC: UIViewController {
             if phoneNumber != "" {
                 UIView.animateWithDuration(0.35, animations: {
                     self.deleteButton.alpha = 1
-                    self.signInButton.alpha = 1
                 })
             } else {
                 UIView.animateWithDuration(0.35, animations: {
                     self.deleteButton.alpha = 0
+                })
+            }
+            
+            if phoneNumber.characters.count == 10 {
+                UIView.animateWithDuration(0.35, animations: {
+                    self.signInButton.alpha = 1
+                })
+            } else {
+                UIView.animateWithDuration(0.35, animations: {
                     self.signInButton.alpha = 0
                 })
             }
@@ -88,18 +96,6 @@ class WelcomeVC: UIViewController {
                 phoneNumber += String(sender.tag)
             }
         }
-        
-//        if phoneNumber != "" {
-//            UIView.animateWithDuration(0.35, animations: { 
-//                self.deleteButton.alpha = 1
-//                self.signInButton.alpha = 1
-//            })
-//        } else {
-//            UIView.animateWithDuration(0.35, animations: { 
-//                self.deleteButton.alpha = 0
-//                self.signInButton.alpha = 0
-//            })
-//        }
     }
     
     func startOver() {
@@ -113,6 +109,7 @@ class WelcomeVC: UIViewController {
     func newCustomerAndGo() {
         newCustomer()
         Customer.current.phoneNumber = phoneNumber
+        phoneNumber = ""
         if (popupVC != nil) {
             popupVC.dismissViewController {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)

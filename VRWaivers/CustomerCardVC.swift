@@ -23,8 +23,13 @@ class CustomerCardVC: UIViewController {
         self.view.layer.cornerRadius = 6.0
         
         customerName.text = (customer?.firstName)! + " " + (customer?.lastName)!
-        phoneNumber.text = customer?.phoneNumber
         emailAddress.text = customer?.emailAddress
+        
+        if let phoneNum = customer?.phoneNumber {
+            phoneNumber.text = "(" + phoneNum.substringToIndex(phoneNum.startIndex.advancedBy(3)) + ") " +
+                phoneNum.substringWithRange(Range<String.Index>(phoneNum.startIndex.advancedBy(3) ..< phoneNum.startIndex.advancedBy(6))) + "-"
+                + phoneNum.substringFromIndex(phoneNum.startIndex.advancedBy(6))
+        }
         
         selectButton.layer.cornerRadius = 3
         selectButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor

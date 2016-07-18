@@ -62,6 +62,7 @@ class SigningVC: UIViewController {
             print(error)
         }
         
+        
         // layout stuff
         nameFields.snp_makeConstraints { (make) in
             make.centerY.equalTo(view.snp_centerY)
@@ -77,6 +78,12 @@ class SigningVC: UIViewController {
             make.bottom.equalTo(view.snp_bottomMargin).offset(-20)
         }
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if firstNameTextField.text == "" {
+            firstNameTextField.becomeFirstResponder()
+        }
     }
 
     func submitCustomer() {
