@@ -35,6 +35,18 @@ class WelcomeVC: UIViewController {
                     phoneNumber.substringWithRange(Range<String.Index>(phoneNumber.startIndex.advancedBy(3) ..< phoneNumber.startIndex.advancedBy(6))) + "-"
                     + phoneNumber.substringFromIndex(phoneNumber.startIndex.advancedBy(6))
             }
+            if phoneNumber != "" {
+                UIView.animateWithDuration(0.35, animations: {
+                    self.deleteButton.alpha = 1
+                    self.signInButton.alpha = 1
+                })
+            } else {
+                UIView.animateWithDuration(0.35, animations: {
+                    self.deleteButton.alpha = 0
+                    self.signInButton.alpha = 0
+                })
+            }
+
         }
     }
     
@@ -77,17 +89,17 @@ class WelcomeVC: UIViewController {
             }
         }
         
-        if phoneNumber != "" {
-            UIView.animateWithDuration(0.35, animations: { 
-                self.deleteButton.alpha = 1
-                self.signInButton.alpha = 1
-            })
-        } else {
-            UIView.animateWithDuration(0.35, animations: { 
-                self.deleteButton.alpha = 0
-                self.signInButton.alpha = 0
-            })
-        }
+//        if phoneNumber != "" {
+//            UIView.animateWithDuration(0.35, animations: { 
+//                self.deleteButton.alpha = 1
+//                self.signInButton.alpha = 1
+//            })
+//        } else {
+//            UIView.animateWithDuration(0.35, animations: { 
+//                self.deleteButton.alpha = 0
+//                self.signInButton.alpha = 0
+//            })
+//        }
     }
     
     func startOver() {
@@ -158,9 +170,8 @@ class WelcomeVC: UIViewController {
         popupVC.dismissViewController { 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let checkedInVC: CheckedInVC = storyboard.instantiateViewControllerWithIdentifier("checkedInVC") as! CheckedInVC
-            self.presentViewController(checkedInVC, animated: true, completion: {
-                //completion
-            })
+            self.phoneNumber = ""
+            self.navigationController?.pushViewController(checkedInVC, animated: true)
         }
     }
 

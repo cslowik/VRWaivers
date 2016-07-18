@@ -38,7 +38,6 @@ class CheckedInVC: UIViewController {
         UIPasteboard.generalPasteboard().string = Customer.current.emailAddress
         
         self.navigationController?.popToRootViewControllerAnimated(true)
-
     }
 
 }

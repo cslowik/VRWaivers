@@ -44,7 +44,7 @@
                                 <rect key="frame" x="-419" y="-49" width="1443" height="817"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VRLAB-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="yTy-wx-DG5">
-                                <rect key="frame" x="51" y="91" width="475" height="185"/>
+                                <rect key="frame" x="51" y="75" width="475" height="185"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="69C-9V-bZP">
@@ -278,7 +278,7 @@
                         <viewControllerLayoutGuide type="top" id="EKT-qN-jHC"/>
                         <viewControllerLayoutGuide type="bottom" id="0o2-Bx-QJ4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sQV-vn-CbP">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="sQV-vn-CbP">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -313,7 +313,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VRLAB-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="muC-RH-nkw">
-                                <rect key="frame" x="20" y="73" width="475" height="185"/>
+                                <rect key="frame" x="20" y="75" width="475" height="185"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXB-qs-owv">

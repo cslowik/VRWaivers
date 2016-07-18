@@ -36,7 +36,7 @@ class WaiverPageVC: UIPageViewController {
     }
     
     func startOver() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
     func agreeTapped() {

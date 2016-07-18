@@ -55,7 +55,6 @@ class CustomerCardVC: UIViewController {
     func checkIn() {
         // set current customer
         Customer.current = customer!
-        
         NSNotificationCenter.defaultCenter().postNotificationName("checkedIn", object: nil)
     }
 
