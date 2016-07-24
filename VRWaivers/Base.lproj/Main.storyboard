@@ -25,6 +25,7 @@
         </mutableArray>
         <mutableArray key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -589,6 +590,12 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                                         <rect key="frame" x="974" y="28" width="30" height="30"/>
                                         <state key="normal" backgroundImage="cancelButton"/>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Just sign below, and you're ready to play!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGP-Hb-2Qd">
+                                        <rect key="frame" x="8" y="51" width="1008" height="45"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -653,7 +660,7 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
         <image name="7" width="230" height="230"/>
         <image name="8" width="230" height="230"/>
         <image name="9" width="230" height="230"/>
-        <image name="VRDoodle" width="1355" height="768"/>
+        <image name="VRDoodle" width="1356" height="768"/>
         <image name="VRLAB-Logo" width="1440" height="560"/>
         <image name="back" width="230" height="230"/>
         <image name="cancelButton" width="30" height="30"/>

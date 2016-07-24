@@ -89,7 +89,7 @@ class SigningVC: UIViewController {
     func submitCustomer() {
         // validation
         let genericError = ValidationError(message: "error")
-        let lengthRule = ValidationRuleLength(min: 2, failureError: genericError)
+        let stringRequiredRule = ValidationRuleRequired<String?>(failureError: genericError)
         let emailRule = ValidationRulePattern(pattern: .EmailAddress, failureError: genericError)
         var phoneRules = ValidationRuleSet<String>()
         let phoneLengthRule = ValidationRuleLength(min: 10, max: 10, failureError: genericError)
@@ -97,12 +97,18 @@ class SigningVC: UIViewController {
         phoneRules.addRule(digitRule)
         phoneRules.addRule(phoneLengthRule)
         
-        let firstNameResult = Validator.validate(input: firstNameTextField.text, rule: lengthRule)
-        let lastNameResult = Validator.validate(input: lastNameTextField.text, rule: lengthRule)
+        let firstNameResult = Validator.validate(input: firstNameTextField.text, rule: stringRequiredRule)
+        let lastNameResult = Validator.validate(input: lastNameTextField.text, rule: stringRequiredRule)
         let phoneNumberResult = Validator.validate(input: phoneNumberTextField.text, rules: phoneRules)
         let emailAddressResult = Validator.validate(input: emailTextField.text, rule: emailRule)
+        var results: ValidationResult
         
-        let results = firstNameResult.merge(lastNameResult.merge(phoneNumberResult.merge(emailAddressResult)))
+        if (emailTextField.text?.isEmpty) != nil {
+            results = firstNameResult.merge(lastNameResult.merge(phoneNumberResult.merge(emailAddressResult)))
+        } else {
+            results = firstNameResult.merge(lastNameResult.merge(phoneNumberResult))
+        }
+        
         
         if results.isValid {
             firstNameTextField.toggleError(false)
@@ -110,17 +116,17 @@ class SigningVC: UIViewController {
             phoneNumberTextField.toggleError(false)
             emailTextField.toggleError(false)
             
-            let headers: [String: String] = [
-                "Authorization": "Bearer sq0atp-rIBIuulvxZxX3JWh2wr91w",
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            ]
-            
             let params: [String: AnyObject] = [
                 "given_name": firstNameTextField.text!,
                 "family_name": lastNameTextField.text!,
                 "phone_number": phoneNumberTextField.text!,
                 "email_address": emailTextField.text!
+            ]
+            
+            let headers: [String: String] = [
+                "Authorization": "Bearer sq0atp-rIBIuulvxZxX3JWh2wr91w",
+                "Accept": "application/json",
+                "Content-Type": "application/json"
             ]
             
             Alamofire.request(.POST, "https://connect.squareup.com/v2/customers", headers: headers, parameters: params, encoding: .JSON)
