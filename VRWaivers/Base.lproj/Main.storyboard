@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Bold.ttf">
@@ -17,6 +18,7 @@
             <string>Montserrat-Bold</string>
         </mutableArray>
         <mutableArray key="Montserrat-Light.ttf">
+            <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
@@ -542,12 +544,30 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lV4-Yd-aDO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lV4-Yd-aDO">
                                 <rect key="frame" x="974" y="28" width="30" height="30"/>
                                 <state key="normal" backgroundImage="cancelButton"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKg-0l-2F4">
+                                <rect key="frame" x="20" y="8" width="926" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="926" id="MPc-vu-oVw"/>
+                                    <constraint firstAttribute="height" constant="70" id="dIW-w9-awb"/>
+                                </constraints>
+                                <string key="text">VR Lab will never share your information with ANY third party unless required to do so by law. 
+Your data is used for filing your waiver and for loyalty rewards within our system only. Email is optional.</string>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lV4-Yd-aDO" firstAttribute="leading" secondItem="uKg-0l-2F4" secondAttribute="trailing" constant="28" id="Gy9-8l-s4G"/>
+                            <constraint firstItem="uKg-0l-2F4" firstAttribute="top" secondItem="BUG-Cj-t0R" secondAttribute="bottom" constant="8" symbolic="YES" id="Tl7-RO-GEA"/>
+                            <constraint firstItem="uKg-0l-2F4" firstAttribute="leading" secondItem="vsk-LT-YEN" secondAttribute="leadingMargin" id="YnW-2H-PiI"/>
+                            <constraint firstItem="uKg-0l-2F4" firstAttribute="centerY" secondItem="lV4-Yd-aDO" secondAttribute="centerY" id="j92-Bz-KoZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Player Info" id="Cvf-va-PWQ"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -581,7 +601,7 @@ Immersive VR experiences necessarily block out the world around the user. VRLab 
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U0b-sB-Id7">
                                 <rect key="frame" x="20" y="530" width="984" height="2"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.86542186501127838" green="0.87159244042512551" blue="0.8901041666666667" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cX3-Is-8OX" customClass="SignatureView" customModule="VRWaivers" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
