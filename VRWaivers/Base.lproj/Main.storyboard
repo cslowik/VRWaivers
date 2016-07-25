@@ -209,6 +209,7 @@
                     <connections>
                         <outlet property="deleteButton" destination="hkW-5F-fyh" id="YOB-sH-ApU"/>
                         <outlet property="phoneNumberLabel" destination="Pna-5s-GpU" id="gSr-Ic-crX"/>
+                        <outlet property="playingButton" destination="43L-FV-VUi" id="uCH-L2-uuh"/>
                         <outlet property="signInButton" destination="Bc2-5Q-ZmD" id="Zn6-cR-KPN"/>
                         <outletCollection property="numberPad" destination="13Z-vz-Puh" collectionClass="NSMutableArray" id="kGA-G6-hxM"/>
                     </connections>
@@ -294,7 +295,7 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXG-ez-eiA">
                                 <rect key="frame" x="974" y="28" width="30" height="30"/>
-                                <state key="normal" backgroundImage="cancelButton"/>
+                                <state key="normal" backgroundImage="cancelButtonWhite"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -733,6 +734,7 @@ Your data is used for filing your waiver and for loyalty rewards within our syst
         <image name="VRLAB-Logo" width="1440" height="560"/>
         <image name="back" width="230" height="230"/>
         <image name="cancelButton" width="30" height="30"/>
+        <image name="cancelButtonWhite" width="30" height="30"/>
         <image name="check" width="100" height="100"/>
         <image name="rewardsDoodle" width="1355" height="768"/>
         <image name="singleTextField" width="420" height="60"/>

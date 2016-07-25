@@ -21,7 +21,7 @@ class MenuVC: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        closeButton.addTarget(self, action: #selector(closeMenu), forControlEvents: .TouchUpInside)
         scroller.delegate = self
         setup()
     }
@@ -29,13 +29,19 @@ class MenuVC: UIViewController, UIScrollViewDelegate {
     func setup() {
         scroller.frame = view.bounds
         print(scroller.frame)
-        scroller.bounces = false
-        scroller.alwaysBounceHorizontal = true
         for (index, image) in images.enumerate() {
             let imageView = UIImageView(image: image)
             scroller.addSubview(imageView)
             imageView.frame = CGRectOffset(imageView.frame, 1024 * CGFloat(index), 0)
         }
-        scroller.contentSize = CGSize(width: CGFloat(images.count * 1024), height: scroller.frame.height)
+        scroller.contentSize = CGSize(width: CGFloat(images.count * 1024), height: 728)
+    }
+    
+    func closeMenu() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 }

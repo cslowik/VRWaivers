@@ -18,6 +18,7 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet var numberPad: [UIButton]!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var playingButton: UIButton!
     
     var realm: Realm!
     var popupVC: PopupCollectionViewController!
@@ -64,6 +65,14 @@ class WelcomeVC: UIViewController {
         self.navigationController?.navigationBarHidden = true
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.dismissPopup), name: "checkedIn", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.newCustomerAndGo), name: "newCustomerAndGo", object: nil)
+        
+        playingButton.layer.cornerRadius = 3
+        playingButton.layer.borderColor = UIColor(red:0.118,  green:0.439,  blue:0.600, alpha:1).CGColor
+        playingButton.layer.borderWidth = 1
+        playingButton.layer.shadowRadius = 10
+        playingButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        playingButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
+        playingButton.layer.shadowOpacity = 0.1
         
         signInButton.layer.cornerRadius = 3
         signInButton.layer.borderColor = UIColor(red:0.145,  green:0.506,  blue:0.098, alpha:1).CGColor
