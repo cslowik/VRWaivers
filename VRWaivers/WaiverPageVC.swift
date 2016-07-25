@@ -21,6 +21,7 @@ class WaiverPageVC: UIPageViewController {
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(completeTapped), name: "completeTapped", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(saveTapped), name: "saveTapped", object: nil)
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
@@ -28,11 +29,6 @@ class WaiverPageVC: UIPageViewController {
                                animated: true,
                                completion: nil)
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func startOver() {

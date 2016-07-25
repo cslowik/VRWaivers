@@ -26,7 +26,6 @@ class SignatureVC: UIViewController {
         saveButton.layer.shadowColor = UIColor(red:0.133,  green:0.152,  blue:0.182, alpha:1).CGColor
         saveButton.layer.shadowOpacity = 0.1
         saveButton.addTarget(self, action: #selector(saveSignature), forControlEvents: .TouchUpInside)
-        saveButton.addTarget(nil, action: #selector(WaiverPageVC.saveTapped), forControlEvents: .TouchUpInside)
         
         cancelButton.addTarget(nil, action: #selector(WaiverPageVC.startOver), forControlEvents: .TouchUpInside)
         
@@ -51,10 +50,10 @@ class SignatureVC: UIViewController {
             try! realm.write {
                 Customer.current.signature = UIImagePNGRepresentation(signatureView.getSignature()!)
             }
-            
+            // notify pageviewcontroller of tap
+            NSNotificationCenter.defaultCenter().postNotificationName("saveTapped", object: nil)
         }
         
-        // notify pageviewcontroller of tap
     }
 
 }
