@@ -42,4 +42,13 @@ class SkewedCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let offset: CGFloat = frame.origin.y - (superview as! UICollectionView).contentOffset.y
+        parallaxModifier = offset/(superview?.frame.height)!
+        imageView.frame = CGRectInset(bounds, 0, -bounds.height / 3)
+        gradient.frame = imageView.bounds
+    }
 }

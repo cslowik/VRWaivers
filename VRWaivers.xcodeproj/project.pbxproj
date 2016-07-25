@@ -27,6 +27,7 @@
 		839C488B1D36BFD900D2B8C0 /* VRWaiversTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C488A1D36BFD900D2B8C0 /* VRWaiversTests.swift */; };
 		83A25C411D3B308100769081 /* CustomerCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A25C401D3B308100769081 /* CustomerCardVC.swift */; };
 		83CBA6071D45B76300FDB069 /* SkewedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CBA6061D45B76300FDB069 /* SkewedCell.swift */; };
+		83CBA6091D45D3DF00FDB069 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CBA6081D45D3DF00FDB069 /* MenuVC.swift */; };
 		83FD0E241D36C137005EB824 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FD0E221D36C137005EB824 /* Realm.framework */; };
 		83FD0E251D36C137005EB824 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83FD0E221D36C137005EB824 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83FD0E261D36C137005EB824 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FD0E231D36C137005EB824 /* RealmSwift.framework */; };
@@ -86,6 +87,7 @@
 		839C488C1D36BFD900D2B8C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83A25C401D3B308100769081 /* CustomerCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerCardVC.swift; sourceTree = "<group>"; };
 		83CBA6061D45B76300FDB069 /* SkewedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkewedCell.swift; sourceTree = "<group>"; };
+		83CBA6081D45D3DF00FDB069 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		83FD0E221D36C137005EB824 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		83FD0E231D36C137005EB824 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		83FD0E2A1D36C57D005EB824 /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				839C48771D36BFD900D2B8C0 /* WaiverVC.swift */,
 				8364E2271D37414500D8F755 /* SigningVC.swift */,
 				8355C3091D3B610D00779FA2 /* CheckedInVC.swift */,
+				83CBA6081D45D3DF00FDB069 /* MenuVC.swift */,
 				83A25C401D3B308100769081 /* CustomerCardVC.swift */,
 				834CDA1A1D375C58001EF345 /* SignatureVC.swift */,
 				83682C9F1D3A8F77005176AC /* WelcomeVC.swift */,
@@ -391,6 +394,7 @@
 				8355C30A1D3B610D00779FA2 /* CheckedInVC.swift in Sources */,
 				839C48761D36BFD900D2B8C0 /* AppDelegate.swift in Sources */,
 				834CDA1B1D375C58001EF345 /* SignatureVC.swift in Sources */,
+				83CBA6091D45D3DF00FDB069 /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

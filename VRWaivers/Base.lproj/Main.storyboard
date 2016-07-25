@@ -16,6 +16,7 @@
             <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
+            <string>Montserrat-Bold</string>
         </mutableArray>
         <mutableArray key="Montserrat-Light.ttf">
             <string>Montserrat-Light</string>
@@ -50,8 +51,22 @@
                                 <rect key="frame" x="51" y="75" width="475" height="185"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43L-FV-VUi">
+                                <rect key="frame" x="106" y="688" width="420" height="60"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.58823529409999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="tvn-O0-B8b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
+                                <state key="normal" title="What's Playing?">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4jy-Lc-6Pe" kind="push" id="9YP-12-4Of"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="69C-9V-bZP">
-                                <rect key="frame" x="581" y="224" width="316" height="424"/>
+                                <rect key="frame" x="601" y="262" width="316" height="424"/>
                                 <subviews>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sr3-bB-edq">
                                         <rect key="frame" x="216" y="216" width="100" height="100"/>
@@ -177,10 +192,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="singleTextField" translatesAutoresizingMaskIntoConstraints="NO" id="ZSC-qS-k0i">
-                                <rect key="frame" x="581" y="156" width="316" height="60"/>
+                                <rect key="frame" x="601" y="194" width="316" height="60"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pna-5s-GpU">
-                                <rect key="frame" x="581" y="156" width="316" height="60"/>
+                                <rect key="frame" x="601" y="194" width="316" height="60"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -259,7 +274,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCj-vL-YVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="842" y="807"/>
+            <point key="canvasLocation" x="602" y="-515"/>
+        </scene>
+        <!--MenuVC-->
+        <scene sceneID="Tgh-a1-M4f">
+            <objects>
+                <viewController id="4jy-Lc-6Pe" customClass="MenuVC" customModule="VRWaivers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="URn-hG-dmw"/>
+                        <viewControllerLayoutGuide type="bottom" id="AQm-vr-nPs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SRZ-nw-c3f">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nrH-fV-0CD">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" red="0.2156862745" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXG-ez-eiA">
+                                <rect key="frame" x="974" y="28" width="30" height="30"/>
+                                <state key="normal" backgroundImage="cancelButton"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hyu-FF-y6p"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="closeButton" destination="vXG-ez-eiA" id="gjj-HL-yVP"/>
+                        <outlet property="scroller" destination="nrH-fV-0CD" id="XPj-6e-AdL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vwo-VW-shk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="1020"/>
         </scene>
         <!--Waiver PageVC-->
         <scene sceneID="Qlk-Vi-rck">
