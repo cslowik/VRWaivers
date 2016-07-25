@@ -23,4 +23,23 @@ class SkewedCell: UICollectionViewCell {
     // Layout Variables
     var parallaxModifier: CGFloat = 0.5     // 0 to 1
     var cellSpacing: CGFloat = 2
+    
+    //MARK:- Lifecycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        clipsToBounds = false
+        backgroundColor = UIColor.clearColor()
+        
+        imageView.frame = CGRectInset(bounds, 0, frame.height / 3)
+        imageView.backgroundColor = UIColor.clearColor()
+        imageView.contentMode = .ScaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.mask = CAShapeLayer(layer: layer)
+        
+        addSubview(imageView)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
