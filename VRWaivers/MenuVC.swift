@@ -13,11 +13,11 @@ class MenuVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var scroller: UIScrollView!
     
-    let images = [UIImage(named: "audioshield"),
-                  UIImage(named: "blu"),
-                  UIImage(named: "holopoint"),
-                  UIImage(named: "irrationalExuberance"),
-                  UIImage(named: "spacePirateTrainer")]
+    let images = [UIImage(named: "fruitNinja"),
+                  UIImage(named: "jobSimulator"),
+                  UIImage(named: "recRoom"),
+                  UIImage(named: "spacePirateTrainer"),
+                  UIImage(named: "vanishingRealms")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

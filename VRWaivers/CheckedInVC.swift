@@ -35,7 +35,7 @@ class CheckedInVC: UIViewController {
     }
     
     func operatorMode() {
-        UIPasteboard.generalPasteboard().string = Customer.current.emailAddress
+        UIPasteboard.generalPasteboard().string = Customer.current.phoneNumber
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
 

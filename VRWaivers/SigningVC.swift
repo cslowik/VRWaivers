@@ -100,29 +100,45 @@ class SigningVC: UIViewController {
         let firstNameResult = Validator.validate(input: firstNameTextField.text, rule: stringRequiredRule)
         let lastNameResult = Validator.validate(input: lastNameTextField.text, rule: stringRequiredRule)
         let phoneNumberResult = Validator.validate(input: phoneNumberTextField.text, rules: phoneRules)
-        let emailAddressResult = Validator.validate(input: emailTextField.text, rule: emailRule)
         var results: ValidationResult
         
-        if (emailTextField.text?.isEmpty) != nil {
-            results = firstNameResult.merge(lastNameResult.merge(phoneNumberResult.merge(emailAddressResult)))
-        } else {
-            results = firstNameResult.merge(lastNameResult.merge(phoneNumberResult))
-        }
-        
+        results = firstNameResult.merge(lastNameResult.merge(phoneNumberResult))
         
         if results.isValid {
             firstNameTextField.toggleError(false)
             lastNameTextField.toggleError(false)
             phoneNumberTextField.toggleError(false)
-            emailTextField.toggleError(false)
             
-            let params: [String: AnyObject] = [
+            let newCustomer = Customer()
+            newCustomer.firstName = firstNameTextField.text!
+            newCustomer.lastName = lastNameTextField.text!
+            newCustomer.phoneNumber = phoneNumberTextField.text!
+            
+            var params: [String: AnyObject]
+            if let theEmail = emailTextField.text {
+                if theEmail != "" {
+                    params = [
+                        "given_name": firstNameTextField.text!,
+                        "family_name": lastNameTextField.text!,
+                        "phone_number": phoneNumberTextField.text!,
+                        "email_address": theEmail
+                    ]
+                    newCustomer.emailAddress = theEmail
+                } else {
+                    params = [
+                        "given_name": firstNameTextField.text!,
+                        "family_name": lastNameTextField.text!,
+                        "phone_number": phoneNumberTextField.text!
+                    ]
+                }
+            } else {
+                params = [
                 "given_name": firstNameTextField.text!,
                 "family_name": lastNameTextField.text!,
-                "phone_number": phoneNumberTextField.text!,
-                "email_address": emailTextField.text!
-            ]
-            
+                "phone_number": phoneNumberTextField.text!
+                ]
+
+            }
             let headers: [String: String] = [
                 "Authorization": "Bearer sq0atp-rIBIuulvxZxX3JWh2wr91w",
                 "Accept": "application/json",
@@ -134,17 +150,13 @@ class SigningVC: UIViewController {
                     print(response.result.value)
             }
             
-            let newCustomer = Customer()
-            newCustomer.firstName = params["given_name"] as! String
-            newCustomer.lastName = params["family_name"] as! String
-            newCustomer.phoneNumber = params["phone_number"] as! String
-            newCustomer.emailAddress = params["email_address"] as! String
-            
             Customer.current = newCustomer
             
             try! realm.write {
                 realm.add(Customer.current)
             }
+            
+            print(realm.configuration.fileURL)
             
             NSNotificationCenter.defaultCenter().postNotificationName("completeTapped", object: nil)
             
@@ -162,10 +174,6 @@ class SigningVC: UIViewController {
             if !phoneNumberResult.isValid {
                 // if the phone number is invalid
                 phoneNumberTextField.toggleError(true)
-            }
-            if !emailAddressResult.isValid {
-                // if the email is invalid
-                emailTextField.toggleError(true)
             }
         }
     }
